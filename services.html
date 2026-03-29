@@ -322,15 +322,20 @@
         }
         .pricing-table td {
             padding: 1rem 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            color: var(--text-light); font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            color: var(--text-dark); font-size: 0.95rem;
         }
         .pricing-table tbody tr:last-child td { border-bottom: none; }
         .pricing-table tbody tr { transition: background 0.2s ease; }
         .pricing-table tbody tr:hover { background: rgba(232,114,92,0.06); }
+        .dark-section .pricing-table td {
+            border-bottom-color: rgba(255,255,255,0.06);
+            color: var(--text-light);
+        }
+        .dark-section .price-tag { color: var(--golden); }
         .price-tag {
             font-family: 'JetBrains Mono', monospace;
-            font-weight: 500; color: var(--golden); font-size: 1.1rem;
+            font-weight: 500; color: var(--coral); font-size: 1.1rem;
         }
 
         /* ── Glass Cards (dark section) ── */
@@ -821,7 +826,7 @@
             <p style="color:#666;margin-bottom:1.5rem;max-width:700px;" class="fade-in">12+ years of experience, 90% client retention. Mobile responsive, SEO-optimized, built to convert.</p>
 
             <div style="background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);margin-bottom:3rem;" class="fade-in">
-                <table class="pricing-table" style="color:var(--text-dark);">
+                <table class="pricing-table">
                     <thead style="background:var(--dark-navy);">
                         <tr>
                             <th style="color:var(--white);">Service</th>
@@ -829,13 +834,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Foundations Website Build (5-page site)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$600</td></tr>
-                        <tr><td>Theme Redesign</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250</td></tr>
-                        <tr><td>Themed Page Design (single page)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$125</td></tr>
-                        <tr><td>Content Page</td><td class="price-tag" style="text-align:right;color:var(--coral);">$75</td></tr>
-                        <tr><td>Customized Functionality</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250+</td></tr>
-                        <tr><td>Testing &amp; Debugging (Small)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$125+</td></tr>
-                        <tr><td>Testing &amp; Debugging (Large)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250+</td></tr>
+                        <tr><td>Foundations Website Build (5-page site)</td><td class="price-tag" style="text-align:right;">$600</td></tr>
+                        <tr><td>Theme Redesign</td><td class="price-tag" style="text-align:right;">$250</td></tr>
+                        <tr><td>Themed Page Design (single page)</td><td class="price-tag" style="text-align:right;">$125</td></tr>
+                        <tr><td>Content Page</td><td class="price-tag" style="text-align:right;">$75</td></tr>
+                        <tr><td>Customized Functionality</td><td class="price-tag" style="text-align:right;">$250+</td></tr>
+                        <tr><td>Testing &amp; Debugging (Small)</td><td class="price-tag" style="text-align:right;">$125+</td></tr>
+                        <tr><td>Testing &amp; Debugging (Large)</td><td class="price-tag" style="text-align:right;">$250+</td></tr>
                     </tbody>
                 </table>
             </div>
