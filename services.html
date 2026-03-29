@@ -7,11 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --dark-navy: #1a1a2e;
@@ -25,10 +21,7 @@
             --text-dark: #1a1a1a;
             --text-light: #f0e6df;
             --white: #ffffff;
-            --glass-bg: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.12);
-            --glass-light-bg: rgba(255, 255, 255, 0.75);
-            --glass-light-border: rgba(255, 255, 255, 0.5);
         }
 
         body {
@@ -44,1045 +37,546 @@
             font-weight: 700;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
-        /* Navigation */
+        /* ── Navigation ── */
         nav {
-            position: sticky;
-            top: 0;
+            position: sticky; top: 0;
             background: var(--white);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             z-index: 100;
             padding: 0.75rem 2rem;
         }
-
         .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1400px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .nav-logo img {
-            height: 50px;
-            object-fit: contain;
-        }
-
+        .nav-logo img { height: 50px; object-fit: contain; }
         .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            align-items: center;
+            display: flex; gap: 2rem; list-style: none; align-items: center;
         }
-
         .nav-links a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
+            font-size: 0.95rem; font-weight: 500;
+            color: var(--text-dark); transition: color 0.3s ease;
         }
-
-        .nav-links a:hover {
-            color: var(--coral);
-        }
-
-        .nav-links a.active {
-            color: var(--coral);
-            font-weight: 600;
-        }
-
-        .nav-right {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-phone {
-            font-weight: 600;
-            color: var(--coral);
-            font-size: 0.95rem;
-        }
-
+        .nav-links a:hover { color: var(--coral); }
+        .nav-links a.active { color: var(--coral); font-weight: 600; }
+        .nav-right { display: flex; gap: 1.5rem; align-items: center; }
+        .nav-phone { font-weight: 600; color: var(--coral); font-size: 0.95rem; }
         .advertise-btn {
-            background: var(--coral);
-            color: var(--white);
-            padding: 0.65rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            background: var(--coral); color: var(--white);
+            padding: 0.65rem 1.5rem; border-radius: 25px;
+            font-weight: 600; font-size: 0.9rem;
+            transition: all 0.3s ease; border: none; cursor: pointer;
         }
-
         .advertise-btn:hover {
-            box-shadow: 0 4px 20px var(--coral-glow);
-            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--coral-glow); transform: translateY(-2px);
         }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 0.4rem; }
+        .hamburger span { width: 25px; height: 3px; background: var(--text-dark); border-radius: 2px; }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 0.4rem;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-dark);
-            border-radius: 2px;
-        }
-
-        /* Hero Banner */
+        /* ── Hero ── */
         .hero {
-            background: url('hero-banner.jpg') center/cover no-repeat;
+            background: url('services-hero.jpg') center 40%/cover no-repeat;
             color: var(--white);
             padding: 6rem 2rem 5rem;
             text-align: center;
             min-height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            position: relative; overflow: hidden;
         }
-
         .hero::before {
             content: '';
-            position: absolute;
-            inset: 0;
+            position: absolute; inset: 0;
             background: linear-gradient(
-                135deg,
-                rgba(26, 26, 46, 0.7) 0%,
-                rgba(22, 33, 62, 0.5) 50%,
-                rgba(26, 26, 46, 0.65) 100%
+                180deg,
+                rgba(26,26,46,0.55) 0%,
+                rgba(22,33,62,0.4) 40%,
+                rgba(26,26,46,0.6) 100%
             );
             z-index: 1;
         }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-        }
-
+        .hero-inner { position: relative; z-index: 2; max-width: 700px; }
         .hero-badge {
             display: inline-block;
-            background: rgba(232, 114, 92, 0.2);
-            border: 1px solid rgba(232, 114, 92, 0.4);
+            background: rgba(232,114,92,0.2);
+            border: 1px solid rgba(232,114,92,0.4);
             backdrop-filter: blur(10px);
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #ffd4c8;
-            margin-bottom: 1.5rem;
+            padding: 0.5rem 1.5rem; border-radius: 25px;
+            font-size: 0.85rem; font-weight: 600;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            color: #ffd4c8; margin-bottom: 1.5rem;
         }
-
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
+            font-size: 3.5rem; margin-bottom: 1rem; font-weight: 800;
             letter-spacing: -0.02em;
             text-shadow: 0 2px 12px rgba(0,0,0,0.3);
         }
-
         .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.2);
-            line-height: 1.7;
+            font-size: 1.2rem; color: var(--text-light);
+            max-width: 600px; margin: 0 auto;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.2); line-height: 1.7;
         }
 
-        /* Quick Nav Pills */
+        /* ── Quick Nav ── */
         .quick-nav {
             background: var(--white);
             padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
+            display: flex; justify-content: center;
+            gap: 0.75rem; flex-wrap: wrap;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            position: relative;
-            z-index: 10;
+            position: relative; z-index: 10;
         }
-
         .quick-nav button {
-            background: var(--cream);
-            border: 2px solid transparent;
-            padding: 0.65rem 1.25rem;
-            border-radius: 25px;
-            font-weight: 600;
-            color: var(--text-dark);
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            background: var(--cream); border: 2px solid transparent;
+            padding: 0.65rem 1.25rem; border-radius: 25px;
+            font-weight: 600; color: var(--text-dark);
+            cursor: pointer; font-size: 0.9rem;
+            transition: all 0.3s ease; font-family: 'Inter', sans-serif;
         }
-
         .quick-nav button:hover {
-            background: var(--coral);
-            color: var(--white);
+            background: var(--coral); color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px var(--coral-glow);
         }
+        .quick-nav button i { margin-right: 0.4rem; }
 
-        .quick-nav button i {
-            margin-right: 0.4rem;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-
-        /* Section Headers */
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-header .accent-line {
-            width: 80px;
-            height: 3px;
+        /* ── Shared ── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 0.75rem; }
+        .accent-line {
+            width: 80px; height: 3px;
             background: linear-gradient(90deg, var(--coral), var(--golden));
-            margin: 0 auto 1rem;
-            border-radius: 2px;
+            margin: 0 auto 1rem; border-radius: 2px;
         }
-
         .section-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 400;
-            line-height: 1.7;
+            font-size: 1.1rem; color: #666;
+            max-width: 620px; margin: 0 auto; line-height: 1.7;
         }
+        .dark-section { background: var(--dark-navy); color: var(--text-light); }
+        .dark-section .section-header h2 { color: var(--white); }
+        .dark-section .section-subtitle { color: rgba(240,230,223,0.7); }
+        .light-section { background: var(--cream); }
 
-        .dark-section .section-subtitle {
-            color: rgba(240, 230, 223, 0.7);
-        }
-
-        .dark-section .section-header h2 {
-            color: var(--white);
-        }
-
-        /* Light sections */
-        .light-section {
-            background: var(--cream);
-        }
-
-        /* Dark sections */
-        .dark-section {
-            background: var(--dark-navy);
-            color: var(--text-light);
-        }
-
-        /* Magazine Advertising Section */
-        .magazine-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .magazine-text p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-        }
-
-        .magazine-highlights {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .highlight-card {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.04);
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-        }
-
-        .highlight-card .stat {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--coral);
-            margin-bottom: 0.25rem;
-        }
-
-        .highlight-card .label {
-            font-size: 0.85rem;
-            color: #666;
-            font-weight: 500;
-        }
-
-        .magazine-note {
-            background: linear-gradient(135deg, var(--pale), rgba(232, 114, 92, 0.08));
-            padding: 1.5rem;
-            border-left: 4px solid var(--coral);
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            color: var(--text-dark);
-        }
-
-        /* CTA Links */
         .cta-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--coral);
-            color: var(--white);
-            padding: 0.85rem 2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--coral); color: var(--white);
+            padding: 0.85rem 2rem; border-radius: 25px;
+            font-weight: 600; transition: all 0.3s ease; font-size: 0.95rem;
         }
-
         .cta-link:hover {
-            box-shadow: 0 6px 24px var(--coral-glow);
-            transform: translateY(-2px);
+            box-shadow: 0 6px 24px var(--coral-glow); transform: translateY(-2px);
         }
+        .cta-link i { font-size: 0.85rem; transition: transform 0.3s ease; }
+        .cta-link:hover i { transform: translateX(3px); }
 
-        .cta-link i {
-            font-size: 0.85rem;
-            transition: transform 0.3s ease;
+        /* ── Tier Cards (top bundles section) ── */
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
-
-        .cta-link:hover i {
-            transform: translateX(3px);
+        .tier-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex; flex-direction: column;
         }
-
-        .cta-link.outline {
-            background: transparent;
+        .tier-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--coral), var(--golden));
+            border-radius: 16px 16px 0 0;
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .tier-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+        .tier-card:hover::before { opacity: 1; }
+        .tier-card.featured {
             border: 2px solid var(--coral);
-            color: var(--coral);
+            box-shadow: 0 8px 30px var(--coral-glow);
         }
-
-        .cta-link.outline:hover {
-            background: var(--coral);
-            color: var(--white);
-        }
-
-        .dark-section .cta-link.outline {
-            border-color: var(--golden);
-            color: var(--golden);
-        }
-
-        .dark-section .cta-link.outline:hover {
-            background: var(--golden);
-            color: var(--dark-navy);
-        }
-
-        /* Pricing Table — Premium Redesign */
-        .pricing-table-wrap {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 2rem 0;
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .pricing-table thead {
-            background: linear-gradient(135deg, rgba(232, 114, 92, 0.15), rgba(240, 160, 80, 0.1));
-        }
-
-        .pricing-table th {
-            padding: 1.25rem 1.5rem;
-            text-align: left;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            color: var(--white);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
-        .pricing-table td {
-            padding: 1.15rem 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .pricing-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .pricing-table tbody tr {
-            transition: background 0.2s ease;
-        }
-
-        .pricing-table tbody tr:hover {
-            background: rgba(232, 114, 92, 0.06);
-        }
-
-        .price-amount {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-            color: var(--golden);
-            font-size: 1.15rem;
-        }
-
-        /* Glass Cards */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--coral), var(--golden));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(232, 114, 92, 0.3);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .glass-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Light glass cards */
-        .light-glass {
-            background: var(--glass-light-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-light-border);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-        }
-
-        .light-glass::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--coral), var(--golden));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .light-glass:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-        }
-
-        .light-glass:hover::before {
-            opacity: 1;
-        }
-
-        /* Hosting Cards */
-        .hosting-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .hosting-card {
-            text-align: center;
-        }
-
-        .hosting-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .hosting-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 500;
-            color: var(--golden);
-            margin: 0.75rem 0 0.25rem;
-        }
-
-        .hosting-price-sub {
-            font-size: 0.9rem;
-            color: rgba(240, 230, 223, 0.6);
-            margin-bottom: 1rem;
-        }
-
-        .hosting-note {
-            display: inline-block;
-            background: rgba(240, 160, 80, 0.15);
-            color: var(--golden);
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .hosting-card p {
-            font-size: 0.9rem;
-            color: rgba(240, 230, 223, 0.7);
-            line-height: 1.6;
-        }
-
-        /* Process Steps */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin: 3rem 0;
-            position: relative;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .dark-section .step-number {
-            background: linear-gradient(135deg, var(--coral), var(--golden));
-            color: var(--white);
-        }
-
-        .light-section .step-number {
-            background: linear-gradient(135deg, var(--coral), var(--golden));
-            color: var(--white);
-        }
-
-        .process-step h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .dark-section .process-step h3 {
-            color: var(--white);
-        }
-
-        .process-step p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .dark-section .process-step p {
-            color: rgba(240, 230, 223, 0.7);
-        }
-
-        /* Comparison Cards */
-        .comparison-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .comparison-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .dark-section .comparison-card h3 {
-            color: var(--white);
-        }
-
-        .card-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2.25rem;
-            color: var(--golden);
-            font-weight: 500;
-            margin: 0.75rem 0 0.25rem;
-        }
-
-        .light-section .card-price {
-            color: var(--coral);
-        }
-
-        .card-billing {
-            font-size: 0.9rem;
-            color: rgba(240, 230, 223, 0.6);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .light-section .card-billing {
-            color: #888;
-        }
-
-        .most-popular-badge {
+        .tier-card.featured::before { opacity: 1; }
+        .tier-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--coral), #d45a47);
-            color: var(--white);
-            padding: 0.4rem 1.25rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            margin-bottom: 1rem;
+            color: var(--white); padding: 0.35rem 1.1rem;
+            border-radius: 20px; font-size: 0.78rem;
+            font-weight: 700; letter-spacing: 0.04em;
+            margin-bottom: 1rem; align-self: flex-start;
         }
-
-        .feature-list {
-            list-style: none;
-            margin: 1rem 0;
+        .tier-name {
+            font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-dark);
         }
-
-        .feature-list li {
-            padding: 0.65rem 0;
-            font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
+        .tier-desc {
+            font-size: 0.9rem; color: #888; margin-bottom: 1.5rem; line-height: 1.5;
         }
-
-        .light-section .feature-list li {
-            border-bottom-color: rgba(0,0,0,0.06);
+        .tier-price-row {
+            display: flex; align-items: baseline; gap: 0.35rem;
+            margin-bottom: 0.25rem;
         }
-
-        .feature-list li:last-child {
-            border-bottom: none;
+        .tier-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.5rem; font-weight: 500; color: var(--coral);
         }
-
-        .feature-list i {
-            color: var(--coral);
-            margin-top: 0.25rem;
-            font-size: 0.85rem;
-            flex-shrink: 0;
+        .tier-unit { font-size: 0.9rem; color: #888; font-weight: 500; }
+        .tier-note { font-size: 0.8rem; color: #aaa; margin-bottom: 1.5rem; }
+        .tier-divider {
+            width: 100%; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+            margin: 0.5rem 0 1.25rem;
         }
-
-        /* Content Package Cards */
-        .content-packages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .tier-features { list-style: none; flex: 1; }
+        .tier-features li {
+            padding: 0.5rem 0; font-size: 0.92rem;
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            color: var(--text-dark);
         }
-
-        .package-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
+        .tier-features i {
+            color: var(--coral); margin-top: 0.2rem;
+            font-size: 0.8rem; flex-shrink: 0;
         }
-
-        .package-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.75rem;
-            color: var(--white);
-        }
-
-        .package-card .price-amount {
-            font-size: 1.75rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .package-card p {
-            font-size: 0.8rem;
-            color: rgba(240, 230, 223, 0.6);
-        }
-
-        /* Reputation card */
-        .reputation-feature {
-            max-width: 520px;
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        /* Print Services Grid */
-        .print-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .print-item {
-            padding: 1.5rem 1rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .print-item i {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-            color: var(--coral);
-            display: block;
-        }
-
-        .print-item:hover {
-            background: rgba(232, 114, 92, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .print-item:hover i {
-            color: var(--golden);
-        }
-
-        .print-item p {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        /* CTA Banner */
-        .cta-banner {
-            background: linear-gradient(135deg, var(--coral) 0%, #d45a47 50%, var(--golden) 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: shimmer 8s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(5%, 5%); }
-        }
-
-        .cta-banner h2 {
-            color: var(--white);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .cta-banner p {
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-            position: relative;
-            opacity: 0.9;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .cta-btn {
-            padding: 0.85rem 2.5rem;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 2px solid var(--white);
-            background: transparent;
-            color: var(--white);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .tier-cta {
+            margin-top: 1.5rem;
+            background: var(--coral); color: var(--white);
+            padding: 0.85rem; border-radius: 8px;
+            text-align: center; font-weight: 600;
+            font-size: 0.95rem; transition: all 0.3s ease;
+            cursor: pointer; border: none; width: 100%;
             font-family: 'Inter', sans-serif;
         }
-
-        .cta-btn.primary {
-            background: var(--white);
-            color: var(--coral);
-            border-color: var(--white);
+        .tier-cta:hover {
+            background: #d45a47; transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--coral-glow);
         }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        .tier-card:not(.featured) .tier-cta {
+            background: transparent; color: var(--coral);
+            border: 2px solid var(--coral);
         }
-
-        .cta-btn.primary:hover {
-            background: var(--cream);
-            border-color: var(--cream);
+        .tier-card:not(.featured) .tier-cta:hover {
+            background: var(--coral); color: var(--white);
         }
-
-        /* Footer */
-        footer {
-            background: #0d1117;
-            color: var(--text-light);
-            padding: 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--text-light);
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--coral);
-        }
-
-        .footer-logo img {
-            height: 40px;
-            object-fit: contain;
-            margin-bottom: 1rem;
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
+        .bundle-note {
+            text-align: center; font-size: 0.9rem; color: #888;
             margin-top: 1rem;
         }
 
-        .footer-socials a {
-            color: var(--coral);
-            font-size: 1.3rem;
+        /* ── Magazine Section ── */
+        .mag-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 3rem; align-items: center;
+        }
+        .mag-text p {
+            font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;
+        }
+        .mag-highlights {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+        }
+        .mag-stat {
+            background: var(--white); padding: 1.25rem;
+            border-radius: 12px; text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
-
-        .footer-socials a:hover {
-            transform: scale(1.2);
+        .mag-stat:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .mag-stat .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.8rem; font-weight: 500; color: var(--coral);
+        }
+        .mag-stat .lbl { font-size: 0.82rem; color: #666; font-weight: 500; margin-top: 0.2rem; }
+        .mag-note {
+            background: linear-gradient(135deg, var(--pale), rgba(232,114,92,0.08));
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid var(--coral);
+            border-radius: 0 8px 8px 0;
+            font-style: italic; font-size: 0.95rem;
+            margin: 1.5rem 0;
         }
 
-        address {
-            font-style: normal;
-            line-height: 1.8;
+        /* ── One-Time Services ── */
+        .glass-wrap {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden; margin: 2rem 0;
+        }
+        .pricing-table { width: 100%; border-collapse: collapse; }
+        .pricing-table thead {
+            background: linear-gradient(135deg, rgba(232,114,92,0.15), rgba(240,160,80,0.1));
+        }
+        .pricing-table th {
+            padding: 1.15rem 1.5rem; text-align: left;
+            font-weight: 600; font-family: 'Inter', sans-serif;
+            color: var(--white); font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.06em;
+        }
+        .pricing-table td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-light); font-size: 0.95rem;
+        }
+        .pricing-table tbody tr:last-child td { border-bottom: none; }
+        .pricing-table tbody tr { transition: background 0.2s ease; }
+        .pricing-table tbody tr:hover { background: rgba(232,114,92,0.06); }
+        .price-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500; color: var(--golden); font-size: 1.1rem;
         }
 
+        /* ── Glass Cards (dark section) ── */
+        .glass-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px; padding: 2.25rem 2rem;
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+        }
+        .glass-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--coral), var(--golden));
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(232,114,92,0.3);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        .glass-card:hover::before { opacity: 1; }
+
+        /* ── Hosting row ── */
+        .hosting-row {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 2rem; margin: 2rem 0;
+        }
+        .hosting-card { text-align: center; }
+        .hosting-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--white); }
+        .h-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.25rem; font-weight: 500;
+            color: var(--golden); margin: 0.5rem 0 0.25rem;
+        }
+        .h-sub { font-size: 0.85rem; color: rgba(240,230,223,0.6); margin-bottom: 0.75rem; }
+        .h-save {
+            display: inline-block;
+            background: rgba(240,160,80,0.15); color: var(--golden);
+            padding: 0.3rem 0.9rem; border-radius: 20px;
+            font-size: 0.78rem; font-weight: 600;
+        }
+        .hosting-card p { font-size: 0.88rem; color: rgba(240,230,223,0.6); }
+
+        /* ── Process Steps ── */
+        .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin: 3rem 0; }
+        .step { text-align: center; }
+        .step-num {
+            width: 52px; height: 52px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.35rem; font-weight: 700; margin: 0 auto 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            background: linear-gradient(135deg, var(--coral), var(--golden));
+            color: var(--white);
+        }
+        .step h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+        .dark-section .step h3 { color: var(--white); }
+        .step p { font-size: 0.88rem; color: #666; }
+        .dark-section .step p { color: rgba(240,230,223,0.6); }
+
+        /* ── Monthly Comparison Cards ── */
+        .compare-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+            gap: 2rem; margin: 2rem 0;
+        }
+        .compare-card h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+        .dark-section .compare-card h3 { color: var(--white); }
+        .light-section .compare-card h3 { color: var(--text-dark); }
+        .c-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.1rem; font-weight: 500;
+            margin: 0.5rem 0 0.15rem;
+        }
+        .dark-section .c-price { color: var(--golden); }
+        .light-section .c-price { color: var(--coral); }
+        .c-billing { font-size: 0.88rem; color: #888; margin-bottom: 1.25rem; font-weight: 500; }
+        .dark-section .c-billing { color: rgba(240,230,223,0.6); }
+        .pop-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--coral), #d45a47);
+            color: var(--white); padding: 0.35rem 1.1rem;
+            border-radius: 20px; font-size: 0.78rem;
+            font-weight: 600; margin-bottom: 0.75rem;
+        }
+        .feat-list { list-style: none; margin: 0.75rem 0; }
+        .feat-list li {
+            padding: 0.5rem 0; font-size: 0.92rem;
+            display: flex; align-items: flex-start; gap: 0.6rem;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .dark-section .feat-list li { border-bottom-color: rgba(255,255,255,0.06); }
+        .feat-list li:last-child { border-bottom: none; }
+        .feat-list i { color: var(--coral); margin-top: 0.2rem; font-size: 0.8rem; flex-shrink: 0; }
+
+        /* ── Light glass card ── */
+        .light-glass {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 16px; padding: 2.25rem 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+        }
+        .light-glass::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--coral), var(--golden));
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .light-glass:hover {
+            transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .light-glass:hover::before { opacity: 1; }
+
+        /* ── Add-on Packages (compact) ── */
+        .addon-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
+            gap: 1.25rem; margin: 2rem 0;
+        }
+        .addon-card {
+            text-align: center; padding: 1.75rem 1.25rem;
+        }
+        .addon-card h3 {
+            font-size: 0.95rem; margin-bottom: 0.6rem; color: var(--white);
+        }
+        .addon-card .price-tag { font-size: 1.6rem; display: block; margin-bottom: 0.4rem; }
+        .addon-card p { font-size: 0.78rem; color: rgba(240,230,223,0.55); }
+
+        /* ── Print Grid ── */
+        .print-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1rem; margin: 2rem 0;
+        }
+        .print-item {
+            padding: 1.25rem 0.75rem; border-radius: 12px;
+            text-align: center; transition: all 0.3s ease;
+        }
+        .print-item i {
+            font-size: 1.8rem; margin-bottom: 0.6rem;
+            color: var(--coral); display: block;
+        }
+        .print-item:hover {
+            background: rgba(232,114,92,0.12); transform: translateY(-4px);
+        }
+        .print-item:hover i { color: var(--golden); }
+        .print-item p { font-size: 0.85rem; font-weight: 500; color: var(--text-light); }
+
+        /* ── CTA Banner ── */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--coral) 0%, #d45a47 50%, var(--golden) 100%);
+            color: var(--white); padding: 5rem 2rem;
+            text-align: center; position: relative; overflow: hidden;
+        }
+        .cta-banner::before {
+            content: ''; position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            animation: shimmer 8s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0%, 100% { transform: translate(0,0); }
+            50% { transform: translate(5%,5%); }
+        }
+        .cta-banner h2 { color: var(--white); font-size: 2.5rem; margin-bottom: 1rem; position: relative; }
+        .cta-banner p { font-size: 1.15rem; margin-bottom: 2rem; position: relative; opacity: 0.9; }
+        .cta-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; position: relative; }
+        .cta-btn {
+            padding: 0.85rem 2.5rem; border-radius: 25px;
+            font-weight: 600; font-size: 1rem;
+            border: 2px solid var(--white); background: transparent;
+            color: var(--white); cursor: pointer;
+            transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+        }
+        .cta-btn.primary { background: var(--white); color: var(--coral); border-color: var(--white); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .cta-btn.primary:hover { background: var(--cream); border-color: var(--cream); }
+
+        /* ── Footer ── */
+        footer { background: #0d1117; color: var(--text-light); padding: 3rem 2rem; }
+        .footer-container {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+            gap: 2rem; margin-bottom: 2rem;
+        }
+        .footer-section h3 { color: var(--white); margin-bottom: 1rem; font-size: 1.1rem; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.75rem; }
+        .footer-section a { color: var(--text-light); transition: color 0.3s ease; }
+        .footer-section a:hover { color: var(--coral); }
+        .footer-logo img { height: 40px; object-fit: contain; margin-bottom: 1rem; }
+        .footer-socials { display: flex; gap: 1rem; margin-top: 1rem; }
+        .footer-socials a { color: var(--coral); font-size: 1.3rem; transition: all 0.3s ease; }
+        .footer-socials a:hover { transform: scale(1.2); }
+        address { font-style: normal; line-height: 1.8; }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: #888;
+            padding-top: 2rem; text-align: center; color: #888;
         }
 
-        /* Scroll animations */
+        /* ── Animations ── */
         .fade-in {
-            opacity: 0;
-            transform: translateY(24px);
+            opacity: 0; transform: translateY(24px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
+        /* ── Responsive ── */
         @media (max-width: 1024px) {
-            .magazine-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hosting-cards {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .content-packages {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .tiers-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+            .mag-grid { grid-template-columns: 1fr; }
+            .hosting-row { grid-template-columns: 1fr 1fr; }
+            .addon-grid { grid-template-columns: repeat(2,1fr); }
         }
-
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-right {
-                gap: 1rem;
-            }
-
-            .nav-phone {
-                display: none;
-            }
-
-            .hero {
-                min-height: 40vh;
-                padding: 4rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.25rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .quick-nav {
-                padding: 1.25rem 1rem;
-                gap: 0.5rem;
-            }
-
-            .quick-nav button {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-
-            .section-header h2 {
-                font-size: 1.75rem;
-            }
-
-            .container {
-                padding: 3rem 1.25rem;
-            }
-
-            .hosting-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .content-packages {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .cta-btn {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            .cta-banner h2 {
-                font-size: 1.75rem;
-            }
-
-            .print-services {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .pricing-table th, .pricing-table td {
-                padding: 0.85rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .highlight-card .stat {
-                font-size: 1.5rem;
-            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-right { gap: 1rem; }
+            .nav-phone { display: none; }
+            .hero { min-height: 40vh; padding: 4rem 1.5rem; }
+            .hero h1 { font-size: 2.25rem; }
+            .hero p { font-size: 1rem; }
+            .quick-nav { padding: 1.25rem 1rem; gap: 0.5rem; }
+            .quick-nav button { padding: 0.5rem 1rem; font-size: 0.8rem; }
+            .section-header h2 { font-size: 1.75rem; }
+            .container { padding: 3rem 1.25rem; }
+            .hosting-row { grid-template-columns: 1fr; }
+            .compare-grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr; }
+            .addon-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .cta-btn { width: 100%; max-width: 280px; }
+            .cta-banner h2 { font-size: 1.75rem; }
+            .print-grid { grid-template-columns: repeat(3,1fr); }
+            .pricing-table th, .pricing-table td { padding: 0.85rem 1rem; font-size: 0.9rem; }
         }
-
         @media (max-width: 480px) {
-            .nav-logo img {
-                height: 40px;
-            }
-
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .hosting-price {
-                font-size: 2rem;
-            }
-
-            .card-price {
-                font-size: 1.75rem;
-            }
-
-            .print-services {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .magazine-highlights {
-                grid-template-columns: 1fr;
-            }
+            .nav-logo img { height: 40px; }
+            .hero h1 { font-size: 1.75rem; }
+            .print-grid { grid-template-columns: repeat(2,1fr); }
+            .mag-highlights { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -1100,37 +594,118 @@
             </ul>
             <div class="nav-right">
                 <a href="tel:3054536674" class="nav-phone"><i class="fas fa-phone" style="font-size:0.8rem;margin-right:4px;"></i> 305-453-6674</a>
-                <button class="advertise-btn" onclick="document.location='#magazine';">Advertise</button>
+                <button class="advertise-btn" onclick="document.location='#packages';">Get Started</button>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <!-- Hero Banner -->
+    <!-- Hero -->
     <div class="hero">
         <div class="hero-inner">
             <span class="hero-badge"><i class="fas fa-star" style="font-size:0.7rem;margin-right:6px;"></i> Full-Service Marketing Partner</span>
             <h1>Services & Pricing</h1>
-            <p>Everything your Florida Keys business needs to grow — from magazine advertising to digital marketing, all under one roof.</p>
+            <p>From magazine advertising to full-service digital marketing &mdash; everything your Florida Keys business needs to grow, all under one roof.</p>
         </div>
     </div>
 
-    <!-- Quick Nav Pills -->
+    <!-- Quick Nav -->
     <div class="quick-nav">
-        <button onclick="document.getElementById('magazine').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-newspaper"></i>Magazine</button>
-        <button onclick="document.getElementById('web-design').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-laptop-code"></i>Web Design</button>
-        <button onclick="document.getElementById('seo').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-chart-line"></i>SEO</button>
-        <button onclick="document.getElementById('social').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-share-nodes"></i>Social Media</button>
-        <button onclick="document.getElementById('reputation').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-star"></i>Reputation</button>
-        <button onclick="document.getElementById('print').scrollIntoView({ behavior: 'smooth' });"><i class="fas fa-print"></i>Print & Design</button>
+        <button onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})"><i class="fas fa-box-open"></i>Packages</button>
+        <button onclick="document.getElementById('magazine').scrollIntoView({behavior:'smooth'})"><i class="fas fa-newspaper"></i>Magazine</button>
+        <button onclick="document.getElementById('one-time').scrollIntoView({behavior:'smooth'})"><i class="fas fa-laptop-code"></i>Web &amp; Design</button>
+        <button onclick="document.getElementById('monthly').scrollIntoView({behavior:'smooth'})"><i class="fas fa-chart-line"></i>Monthly Plans</button>
+        <button onclick="document.getElementById('print').scrollIntoView({behavior:'smooth'})"><i class="fas fa-print"></i>Print</button>
     </div>
 
-    <!-- Section 1: Magazine Advertising -->
-    <section id="magazine" class="light-section">
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 1 — RECOMMENDED BUNDLES
+         ═══════════════════════════════════════════════════ -->
+    <section id="packages" class="light-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Choose Your Growth Plan</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">Pick a monthly package that fits your business, or scroll down for à la carte pricing on individual services.</p>
+            </div>
+
+            <div class="tiers-grid fade-in">
+                <!-- Starter -->
+                <div class="tier-card">
+                    <h3 class="tier-name">Starter</h3>
+                    <p class="tier-desc">Build your digital foundation with a professional web presence and local social media.</p>
+                    <div class="tier-price-row">
+                        <span class="tier-price">$400</span>
+                        <span class="tier-unit">/mo</span>
+                    </div>
+                    <p class="tier-note">+ one-time $600 website build</p>
+                    <div class="tier-divider"></div>
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check"></i> 5-page responsive website</li>
+                        <li><i class="fas fa-check"></i> Managed hosting included</li>
+                        <li><i class="fas fa-check"></i> 2 social platforms, 15 posts each</li>
+                        <li><i class="fas fa-check"></i> 2 Reels/Stories per platform</li>
+                        <li><i class="fas fa-check"></i> Message management &amp; 48hr response</li>
+                        <li><i class="fas fa-check"></i> Monthly performance report</li>
+                    </ul>
+                    <a href="index.html#contact"><button class="tier-cta">Get Started</button></a>
+                </div>
+
+                <!-- Growth (featured) -->
+                <div class="tier-card featured">
+                    <span class="tier-badge">Most Popular</span>
+                    <h3 class="tier-name">Growth</h3>
+                    <p class="tier-desc">Full digital marketing stack — SEO, social, and review management driving real results.</p>
+                    <div class="tier-price-row">
+                        <span class="tier-price">$1,730</span>
+                        <span class="tier-unit">/mo</span>
+                    </div>
+                    <p class="tier-note">SEO $780 + Social $650 + Reputation $325 — save vs. buying separately</p>
+                    <div class="tier-divider"></div>
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check"></i> Foundational SEO (20 keywords tracked)</li>
+                        <li><i class="fas fa-check"></i> 4+ monthly backlink prospects</li>
+                        <li><i class="fas fa-check"></i> Weekly Google My Business posts</li>
+                        <li><i class="fas fa-check"></i> 4 social platforms, 15 posts each</li>
+                        <li><i class="fas fa-check"></i> 4 Reels/Stories per platform</li>
+                        <li><i class="fas fa-check"></i> Complete reputation management</li>
+                        <li><i class="fas fa-check"></i> $20 monthly boost budget included</li>
+                        <li><i class="fas fa-check"></i> Monthly reports &amp; dedicated manager</li>
+                    </ul>
+                    <a href="index.html#contact"><button class="tier-cta">Get Started</button></a>
+                </div>
+
+                <!-- Full Service -->
+                <div class="tier-card">
+                    <h3 class="tier-name">Full Service</h3>
+                    <p class="tier-desc">Everything in Growth plus aggressive SEO, enterprise social, and magazine advertising.</p>
+                    <div class="tier-price-row">
+                        <span class="tier-price">$2,525</span>
+                        <span class="tier-unit">/mo</span>
+                    </div>
+                    <p class="tier-note">+ magazine ad rates (custom quote)</p>
+                    <div class="tier-divider"></div>
+                    <ul class="tier-features">
+                        <li><i class="fas fa-check"></i> Growth SEO (75 keywords, 10+ backlinks)</li>
+                        <li><i class="fas fa-check"></i> 2 new webpages/redesigns per month</li>
+                        <li><i class="fas fa-check"></i> Enterprise social — 30 posts/platform</li>
+                        <li><i class="fas fa-check"></i> 8 Reels/Stories per platform</li>
+                        <li><i class="fas fa-check"></i> Complete reputation management</li>
+                        <li><i class="fas fa-check"></i> $40 monthly boost budget included</li>
+                        <li><i class="fas fa-check"></i> Magazine ad placement &amp; design</li>
+                        <li><i class="fas fa-check"></i> Priority support &amp; dedicated manager</li>
+                    </ul>
+                    <a href="index.html#contact"><button class="tier-cta">Get Started</button></a>
+                </div>
+            </div>
+            <p class="bundle-note fade-in">All plans include a free consultation. Prices can be customized to fit your budget. <a href="index.html#contact" style="color:var(--coral);font-weight:600;">Let's talk →</a></p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 2 — MAGAZINE ADVERTISING
+         ═══════════════════════════════════════════════════ -->
+    <section id="magazine" class="dark-section">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Magazine Advertising</h2>
@@ -1138,151 +713,137 @@
                 <p class="section-subtitle">The only publication mailed to every mailbox in the Florida Keys</p>
             </div>
 
-            <div class="magazine-grid fade-in">
-                <div class="magazine-text">
-                    <p>Keys Life Magazine reaches 26,000 copies mailed monthly to every home, business, and PO box from Ocean Reef to Long Key. With 94 rack locations from Florida City to Mile Marker 38, your ad reaches your audience where they live, work, and visit.</p>
-                    <p>Every magazine advertising package includes social media promotion twice monthly at no extra charge, extending your reach across digital channels.</p>
-                    <div class="magazine-note">
-                        Contact us for custom advertising rates and packages tailored to your business goals.
+            <div class="mag-grid fade-in">
+                <div class="mag-text">
+                    <p style="color:var(--text-light);">Keys Life Magazine reaches 26,000 copies mailed monthly to every home, business, and PO box from Ocean Reef to Long Key. With 94 rack locations from Florida City to Mile Marker 38, your ad reaches your audience where they live, work, and visit.</p>
+                    <p style="color:var(--text-light);">Every magazine advertising package includes social media promotion twice monthly at no extra charge, extending your reach across digital channels.</p>
+                    <div class="mag-note" style="color:var(--text-dark);">
+                        Ad rates are customized to your goals, placement, and size. Contact us for a personalized package.
                     </div>
                     <a href="index.html#contact" class="cta-link">Get a Custom Quote <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="magazine-highlights">
-                    <div class="highlight-card">
-                        <div class="stat">26,000+</div>
-                        <div class="label">Magazines Mailed Monthly</div>
+                <div class="mag-highlights">
+                    <div class="mag-stat" style="background:var(--dark-card);border:1px solid var(--glass-border);">
+                        <div class="num">26,000+</div>
+                        <div class="lbl" style="color:var(--text-light);">Mailed Monthly</div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="stat">94</div>
-                        <div class="label">Rack Locations</div>
+                    <div class="mag-stat" style="background:var(--dark-card);border:1px solid var(--glass-border);">
+                        <div class="num">94</div>
+                        <div class="lbl" style="color:var(--text-light);">Rack Locations</div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="stat">40,000+</div>
-                        <div class="label">Social Followers</div>
+                    <div class="mag-stat" style="background:var(--dark-card);border:1px solid var(--glass-border);">
+                        <div class="num">40,000+</div>
+                        <div class="lbl" style="color:var(--text-light);">Social Followers</div>
                     </div>
-                    <div class="highlight-card">
-                        <div class="stat">100%</div>
-                        <div class="label">Household Coverage</div>
+                    <div class="mag-stat" style="background:var(--dark-card);border:1px solid var(--glass-border);">
+                        <div class="num">100%</div>
+                        <div class="lbl" style="color:var(--text-light);">Household Coverage</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Website Design -->
-    <section id="web-design" class="dark-section">
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 3 — ONE-TIME SERVICES (Web, Design, etc.)
+         ═══════════════════════════════════════════════════ -->
+    <section id="one-time" class="light-section">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>Website Design & Development</h2>
+                <h2>One-Time Services</h2>
                 <div class="accent-line"></div>
-                <p class="section-subtitle">12+ years of experience, 90% client retention. Mobile responsive, SEO-optimized, built to convert.</p>
+                <p class="section-subtitle">Pay once — no recurring fees. Website builds, redesigns, and custom functionality.</p>
             </div>
 
-            <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Pricing</h3>
-            <div class="pricing-table-wrap fade-in">
-                <table class="pricing-table">
-                    <thead>
+            <h3 style="font-size:1.3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-laptop-code" style="color:var(--coral);margin-right:0.5rem;"></i> Website Design & Development</h3>
+            <p style="color:#666;margin-bottom:1.5rem;max-width:700px;" class="fade-in">12+ years of experience, 90% client retention. Mobile responsive, SEO-optimized, built to convert.</p>
+
+            <div style="background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.06);margin-bottom:3rem;" class="fade-in">
+                <table class="pricing-table" style="color:var(--text-dark);">
+                    <thead style="background:var(--dark-navy);">
                         <tr>
-                            <th>Service</th>
-                            <th>Price</th>
+                            <th style="color:var(--white);">Service</th>
+                            <th style="color:var(--white);text-align:right;">Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Foundations Website Build (5-page site)</td>
-                            <td class="price-amount">$600</td>
-                        </tr>
-                        <tr>
-                            <td>Theme Redesign</td>
-                            <td class="price-amount">$250</td>
-                        </tr>
-                        <tr>
-                            <td>Themed Page Design (single page)</td>
-                            <td class="price-amount">$125</td>
-                        </tr>
-                        <tr>
-                            <td>Content Page</td>
-                            <td class="price-amount">$75</td>
-                        </tr>
-                        <tr>
-                            <td>Customized Functionality</td>
-                            <td class="price-amount">$250+</td>
-                        </tr>
-                        <tr>
-                            <td>Testing & Debugging (Small)</td>
-                            <td class="price-amount">$125+</td>
-                        </tr>
-                        <tr>
-                            <td>Testing & Debugging (Large)</td>
-                            <td class="price-amount">$250+</td>
-                        </tr>
+                        <tr><td>Foundations Website Build (5-page site)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$600</td></tr>
+                        <tr><td>Theme Redesign</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250</td></tr>
+                        <tr><td>Themed Page Design (single page)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$125</td></tr>
+                        <tr><td>Content Page</td><td class="price-tag" style="text-align:right;color:var(--coral);">$75</td></tr>
+                        <tr><td>Customized Functionality</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250+</td></tr>
+                        <tr><td>Testing &amp; Debugging (Small)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$125+</td></tr>
+                        <tr><td>Testing &amp; Debugging (Large)</td><td class="price-tag" style="text-align:right;color:var(--coral);">$250+</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 style="color: var(--white); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Hosting Packages</h3>
-            <div class="hosting-cards fade-in">
-                <div class="glass-card hosting-card">
-                    <h3>Managed Hosting</h3>
-                    <div class="hosting-price">$130</div>
-                    <div class="hosting-price-sub">Per month</div>
-                    <p>Full management, daily backups, security updates, and dedicated support included.</p>
+            <h3 style="font-size:1.3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-server" style="color:var(--coral);margin-right:0.5rem;"></i> Hosting Packages</h3>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;" class="fade-in">
+                <div class="light-glass" style="text-align:center;">
+                    <h3 style="font-size:1.1rem;color:var(--text-dark);margin-bottom:0.5rem;">Managed Hosting</h3>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:2.25rem;font-weight:500;color:var(--coral);margin:0.5rem 0 0.15rem;">$130</div>
+                    <div style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">Per month</div>
+                    <p style="font-size:0.88rem;color:#666;">Daily backups, security updates, dedicated support</p>
                 </div>
-                <div class="glass-card hosting-card" style="border-color: var(--coral);">
-                    <div class="most-popular-badge">Best Value</div>
-                    <h3>Managed Hosting Yearly</h3>
-                    <div class="hosting-price">$1,200</div>
-                    <div class="hosting-price-sub">Per year</div>
-                    <div class="hosting-note">Save $360 vs monthly</div>
+                <div class="light-glass" style="text-align:center;border:2px solid var(--coral);">
+                    <span class="pop-badge">Best Value</span>
+                    <h3 style="font-size:1.1rem;color:var(--text-dark);margin-bottom:0.5rem;">Managed Yearly</h3>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:2.25rem;font-weight:500;color:var(--coral);margin:0.5rem 0 0.15rem;">$1,200</div>
+                    <div style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">Per year</div>
+                    <span style="display:inline-block;background:rgba(232,114,92,0.1);color:var(--coral);padding:0.3rem 0.9rem;border-radius:20px;font-size:0.78rem;font-weight:600;">Save $360/yr</span>
                 </div>
-                <div class="glass-card hosting-card">
-                    <h3>Unmanaged Hosting</h3>
-                    <div class="hosting-price">$360</div>
-                    <div class="hosting-price-sub">Per year</div>
-                    <p>Budget-friendly option for experienced developers.</p>
+                <div class="light-glass" style="text-align:center;">
+                    <h3 style="font-size:1.1rem;color:var(--text-dark);margin-bottom:0.5rem;">Unmanaged</h3>
+                    <div style="font-family:'JetBrains Mono',monospace;font-size:2.25rem;font-weight:500;color:var(--coral);margin:0.5rem 0 0.15rem;">$360</div>
+                    <div style="font-size:0.85rem;color:#888;margin-bottom:0.75rem;">Per year</div>
+                    <p style="font-size:0.88rem;color:#666;">Budget-friendly for experienced developers</p>
                 </div>
             </div>
 
-            <h3 style="color: var(--white); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Our Process</h3>
-            <div class="process-steps fade-in">
-                <div class="process-step">
-                    <div class="step-number">1</div>
+            <h3 style="font-size:1.3rem;margin-bottom:1.25rem;" class="fade-in"><i class="fas fa-arrows-spin" style="color:var(--coral);margin-right:0.5rem;"></i> Our Web Design Process</h3>
+            <div class="steps fade-in">
+                <div class="step">
+                    <div class="step-num">1</div>
                     <h3>Discovery</h3>
                     <p>We learn about your business, goals, and vision for your online presence.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Review & Revision</h3>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Review &amp; Revision</h3>
                     <p>You review concepts and we refine until everything is perfect.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
+                <div class="step">
+                    <div class="step-num">3</div>
                     <h3>Launch</h3>
                     <p>Your site goes live and your customers start finding you online.</p>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 2rem;" class="fade-in">
+            <div style="text-align:center;margin-top:2rem;" class="fade-in">
                 <a href="index.html#contact" class="cta-link">Start Your Project <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: SEO Management -->
-    <section id="seo" class="light-section">
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 4 — MONTHLY RETAINERS (SEO + Social + Rep)
+         ═══════════════════════════════════════════════════ -->
+    <section id="monthly" class="dark-section">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>SEO Management</h2>
+                <h2>Monthly Marketing Plans</h2>
                 <div class="accent-line"></div>
-                <p class="section-subtitle">Drive qualified traffic from search engines. Our proven strategies increase visibility, clicks, and conversions.</p>
+                <p class="section-subtitle">Ongoing SEO, social media management, and reputation services — all month-to-month with no long-term contracts.</p>
             </div>
 
-            <div class="comparison-cards fade-in">
-                <div class="light-glass">
-                    <h3 style="color: var(--text-dark);">Foundational</h3>
-                    <div class="card-price">$780</div>
-                    <div class="card-billing">Per month</div>
-                    <ul class="feature-list">
+            <!-- SEO -->
+            <h3 style="color:var(--white);font-size:1.3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-chart-line" style="color:var(--golden);margin-right:0.5rem;"></i> SEO Management</h3>
+            <div class="compare-grid fade-in">
+                <div class="glass-card compare-card">
+                    <h3>Foundational</h3>
+                    <div class="c-price">$780</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list">
                         <li><i class="fas fa-check"></i> 1 new webpage/redesign per month</li>
                         <li><i class="fas fa-check"></i> Up to 20 keywords tracked</li>
                         <li><i class="fas fa-check"></i> 4+ monthly backlink prospects</li>
@@ -1291,12 +852,12 @@
                         <li><i class="fas fa-check"></i> Dedicated SEO manager</li>
                     </ul>
                 </div>
-                <div class="light-glass" style="border: 2px solid var(--coral);">
-                    <div class="most-popular-badge">Most Popular</div>
-                    <h3 style="color: var(--text-dark);">Growth</h3>
-                    <div class="card-price">$1,300</div>
-                    <div class="card-billing">Per month</div>
-                    <ul class="feature-list">
+                <div class="glass-card compare-card" style="border-color:var(--coral);">
+                    <span class="pop-badge">Most Popular</span>
+                    <h3>Growth</h3>
+                    <div class="c-price">$1,300</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list">
                         <li><i class="fas fa-check"></i> 2 new webpages/redesigns per month</li>
                         <li><i class="fas fa-check"></i> Up to 75 keywords tracked</li>
                         <li><i class="fas fa-check"></i> 10+ monthly backlink prospects</li>
@@ -1307,143 +868,63 @@
                 </div>
             </div>
 
-            <div class="magazine-note fade-in">
-                Results typically appear within 6-12 months depending on campaign scope. We focus on sustainable, white-hat SEO strategies.
+            <div class="mag-note fade-in" style="color:var(--text-dark);margin:2rem 0 3rem;">
+                Results typically appear within 6-12 months. We focus on sustainable, white-hat SEO strategies.
             </div>
 
-            <h3 style="margin-top: 2.5rem; margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Our Process</h3>
-            <div class="process-steps fade-in">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Strategize</h3>
-                    <p>We audit your site and competitors, identify opportunities and target keywords.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Build</h3>
-                    <p>We optimize on-page content, build backlinks, and improve technical performance.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Monitor</h3>
-                    <p>We track rankings, refine tactics, and provide ongoing reports.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;" class="fade-in">
-                <a href="index.html#contact" class="cta-link">Boost Your Rankings <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Social Media Marketing -->
-    <section id="social" class="dark-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Social Media Marketing</h2>
-                <div class="accent-line"></div>
-                <p class="section-subtitle">Build your community and drive engagement across Facebook, Instagram, TikTok, LinkedIn, and more.</p>
-            </div>
-
-            <h3 style="color: var(--white); margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Content Packages</h3>
-            <div class="content-packages fade-in">
-                <div class="glass-card package-card">
-                    <h3>15 Post Package</h3>
-                    <span class="price-amount">$260</span>
-                </div>
-                <div class="glass-card package-card">
-                    <h3>30 Post Package</h3>
-                    <span class="price-amount">$390</span>
-                </div>
-                <div class="glass-card package-card">
-                    <h3>Blog Post</h3>
-                    <span class="price-amount">$175</span>
-                    <p>$50 when bundled with SEO</p>
-                </div>
-                <div class="glass-card package-card">
-                    <h3>Website Page Addition</h3>
-                    <span class="price-amount">$250</span>
-                    <p>Per page</p>
-                </div>
-                <div class="glass-card package-card">
-                    <h3>GMB Optimization</h3>
-                    <span class="price-amount">$650</span>
-                </div>
-                <div class="glass-card package-card">
-                    <h3>Citations & Listings</h3>
-                    <span class="price-amount">$450</span>
-                    <p>Per month</p>
-                </div>
-            </div>
-
-            <h3 style="color: var(--white); margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.3rem;" class="fade-in">Management Packages</h3>
-            <div class="comparison-cards fade-in">
-                <div class="glass-card">
+            <!-- Social Media -->
+            <h3 style="color:var(--white);font-size:1.3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-share-nodes" style="color:var(--golden);margin-right:0.5rem;"></i> Social Media Management</h3>
+            <div class="compare-grid fade-in">
+                <div class="glass-card compare-card">
                     <h3>Starter</h3>
-                    <div class="card-price">$400</div>
-                    <div class="card-billing">Per month</div>
-                    <ul class="feature-list">
+                    <div class="c-price">$400</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list">
                         <li><i class="fas fa-check"></i> 4 hours dedicated management</li>
                         <li><i class="fas fa-check"></i> Up to 2 platforms</li>
                         <li><i class="fas fa-check"></i> 15 posts per platform</li>
                         <li><i class="fas fa-check"></i> 2 Reels/Stories per platform</li>
                         <li><i class="fas fa-check"></i> $10 boost budget included</li>
-                        <li><i class="fas fa-check"></i> Message management & 48hr response</li>
                         <li><i class="fas fa-check"></i> Monthly reports</li>
                     </ul>
                 </div>
-                <div class="glass-card" style="border-color: var(--coral);">
-                    <div class="most-popular-badge">Most Popular</div>
+                <div class="glass-card compare-card" style="border-color:var(--coral);">
+                    <span class="pop-badge">Most Popular</span>
                     <h3>Growth</h3>
-                    <div class="card-price">$650</div>
-                    <div class="card-billing">Per month</div>
-                    <ul class="feature-list">
+                    <div class="c-price">$650</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list">
                         <li><i class="fas fa-check"></i> 8 hours dedicated management</li>
                         <li><i class="fas fa-check"></i> Up to 4 platforms</li>
                         <li><i class="fas fa-check"></i> 15 posts per platform</li>
                         <li><i class="fas fa-check"></i> 4 Reels/Stories per platform</li>
                         <li><i class="fas fa-check"></i> $20 boost budget included</li>
-                        <li><i class="fas fa-check"></i> Message management & 48hr response</li>
                         <li><i class="fas fa-check"></i> Monthly reports</li>
                     </ul>
                 </div>
-                <div class="glass-card">
+                <div class="glass-card compare-card">
                     <h3>Enterprise</h3>
-                    <div class="card-price">$900</div>
-                    <div class="card-billing">Per month</div>
-                    <ul class="feature-list">
+                    <div class="c-price">$900</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list">
                         <li><i class="fas fa-check"></i> 12 hours dedicated management</li>
                         <li><i class="fas fa-check"></i> Up to 4 platforms</li>
                         <li><i class="fas fa-check"></i> 30 posts per platform</li>
                         <li><i class="fas fa-check"></i> 8 Reels/Stories per platform</li>
                         <li><i class="fas fa-check"></i> $40 boost budget included</li>
-                        <li><i class="fas fa-check"></i> Message management & 48hr response</li>
                         <li><i class="fas fa-check"></i> Monthly reports</li>
                     </ul>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem;" class="fade-in">
-                <a href="index.html#contact" class="cta-link">Grow Your Audience <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Reputation Management -->
-    <section id="reputation" class="light-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>Reputation Management</h2>
-                <div class="accent-line"></div>
-                <p class="section-subtitle">Manage your online reputation and turn satisfied customers into vocal advocates.</p>
-            </div>
-
-            <div class="reputation-feature fade-in">
-                <div class="light-glass" style="border: 2px solid var(--coral);">
-                    <h3 style="text-align: center; color: var(--text-dark); font-size: 1.4rem;">Complete Review Management</h3>
-                    <div class="card-price" style="text-align: center;">$325</div>
-                    <div class="card-billing" style="text-align: center;">Per month</div>
-                    <ul class="feature-list">
+            <!-- Reputation Management -->
+            <h3 style="color:var(--white);font-size:1.3rem;margin-top:3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-star" style="color:var(--golden);margin-right:0.5rem;"></i> Reputation Management</h3>
+            <div style="max-width:480px;margin:0 auto;" class="fade-in">
+                <div class="glass-card compare-card" style="text-align:center;border-color:var(--coral);">
+                    <h3>Complete Review Management</h3>
+                    <div class="c-price">$325</div>
+                    <div class="c-billing">Per month</div>
+                    <ul class="feat-list" style="text-align:left;">
                         <li><i class="fas fa-check"></i> 5 hours/month personalized review requests</li>
                         <li><i class="fas fa-check"></i> Google Reviews management</li>
                         <li><i class="fas fa-check"></i> Customer testimonials</li>
@@ -1454,14 +935,50 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem;" class="fade-in">
-                <a href="index.html#contact" class="cta-link">Protect Your Reputation <i class="fas fa-arrow-right"></i></a>
+            <!-- Add-On Content Packs -->
+            <h3 style="color:var(--white);font-size:1.3rem;margin-top:3rem;margin-bottom:1.5rem;" class="fade-in"><i class="fas fa-puzzle-piece" style="color:var(--golden);margin-right:0.5rem;"></i> Add-On Content Packages</h3>
+            <p style="color:rgba(240,230,223,0.6);margin-bottom:1.5rem;font-size:0.95rem;" class="fade-in">Bolt these onto any monthly plan — or purchase standalone.</p>
+            <div class="addon-grid fade-in">
+                <div class="glass-card addon-card">
+                    <h3>15 Posts</h3>
+                    <span class="price-tag">$260</span>
+                </div>
+                <div class="glass-card addon-card">
+                    <h3>30 Posts</h3>
+                    <span class="price-tag">$390</span>
+                </div>
+                <div class="glass-card addon-card">
+                    <h3>Blog Post</h3>
+                    <span class="price-tag">$175</span>
+                    <p>$50 when bundled with SEO</p>
+                </div>
+                <div class="glass-card addon-card">
+                    <h3>Website Page</h3>
+                    <span class="price-tag">$250</span>
+                    <p>Per page addition</p>
+                </div>
+                <div class="glass-card addon-card">
+                    <h3>GMB Optimization</h3>
+                    <span class="price-tag">$650</span>
+                    <p>One-time setup</p>
+                </div>
+                <div class="glass-card addon-card">
+                    <h3>Citations &amp; Listings</h3>
+                    <span class="price-tag">$450</span>
+                    <p>Per month</p>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:2.5rem;" class="fade-in">
+                <a href="index.html#contact" class="cta-link">Build Your Custom Plan <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Print & Design Services -->
-    <section id="print" class="dark-section">
+    <!-- ═══════════════════════════════════════════════════
+         SECTION 5 — PRINT & DESIGN
+         ═══════════════════════════════════════════════════ -->
+    <section id="print" class="light-section">
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Print & Design Services</h2>
@@ -1469,98 +986,76 @@
                 <p class="section-subtitle">Professional design and printing for every marketing need. Fast turnaround, exceptional quality.</p>
             </div>
 
-            <div class="print-services fade-in">
-                <div class="glass-card print-item">
-                    <i class="fas fa-rectangle-landscape"></i>
-                    <p>Banners</p>
+            <div class="print-grid fade-in">
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-image"></i><p>Banners</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-book"></i>
-                    <p>Booklets</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-book"></i><p>Booklets</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-sparkles"></i>
-                    <p>Brand Identity</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-wand-magic-sparkles"></i><p>Brand Identity</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-images"></i>
-                    <p>Brochures</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-images"></i><p>Brochures</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-id-card"></i>
-                    <p>Business Cards</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-id-card"></i><p>Business Cards</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-car"></i>
-                    <p>Car Magnets</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-car"></i><p>Car Magnets</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-door-open"></i>
-                    <p>Door Hangers</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-door-open"></i><p>Door Hangers</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>Envelopes</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-envelope"></i><p>Envelopes</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-file"></i>
-                    <p>Flyers</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-file"></i><p>Flyers</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-palette"></i>
-                    <p>Graphic Design</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-palette"></i><p>Graphic Design</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-heart"></i>
-                    <p>Greeting Cards</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-heart"></i><p>Greeting Cards</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-envelope-open-text"></i>
-                    <p>Invitations</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-envelope-open-text"></i><p>Invitations</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-image"></i>
-                    <p>Posters</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-file-lines"></i><p>Letterheads</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-file-lines"></i>
-                    <p>Letterheads</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-pen-nib"></i><p>Logos</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-pen-nib"></i>
-                    <p>Logos</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-magnet"></i><p>Magnets</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-magnet"></i>
-                    <p>Magnets</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-utensils"></i><p>Menus</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-utensils"></i>
-                    <p>Menus</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-paperclip"></i><p>NCR Forms</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-paperclip"></i>
-                    <p>NCR Forms</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-pencil"></i><p>Note Pads</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-pencil"></i>
-                    <p>Note Pads</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-credit-card"></i><p>Plastic Cards</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-credit-card"></i>
-                    <p>Plastic Cards</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-shirt"></i><p>Apparel</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-shirt"></i>
-                    <p>Apparel</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-note-sticky"></i><p>Stickers</p>
                 </div>
-                <div class="glass-card print-item">
-                    <i class="fas fa-note-sticky"></i>
-                    <p>Stickers</p>
+                <div class="print-item" style="background:var(--white);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                    <i class="fas fa-signs-post"></i><p>Posters</p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 2rem;" class="fade-in">
+            <div style="text-align:center;margin-top:2rem;" class="fade-in">
                 <a href="index.html#contact" class="cta-link">Request a Quote <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -1602,11 +1097,11 @@
             <div class="footer-section">
                 <h3>Services</h3>
                 <ul>
+                    <li><a href="#packages">Growth Plans</a></li>
                     <li><a href="#magazine">Magazine Advertising</a></li>
-                    <li><a href="#web-design">Website Design</a></li>
-                    <li><a href="#seo">SEO Management</a></li>
-                    <li><a href="#social">Social Media</a></li>
-                    <li><a href="#reputation">Reputation Management</a></li>
+                    <li><a href="#one-time">Website Design</a></li>
+                    <li><a href="#monthly">SEO &amp; Social</a></li>
+                    <li><a href="#print">Print &amp; Design</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -1625,16 +1120,10 @@
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
     </script>
 </body>
 </html>
