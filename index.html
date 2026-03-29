@@ -1313,16 +1313,17 @@
             width: 100%;
         }
 
-        /* When menu is open, pull hamburger out of nav stacking context */
-        body.menu-open .hamburger {
+        /* When menu is open, keep nav above overlay */
+        body.menu-open nav {
             position: fixed;
-            top: 0.75rem;
-            right: 1rem;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 1100;
         }
 
-        body.menu-open .nav-right {
-            visibility: hidden;
+        body.menu-open .btn-advertise {
+            display: none;
         }
     </style>
 </head>
