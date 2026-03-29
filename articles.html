@@ -1,1188 +1,1133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse all Keys Life Magazine articles: Spotlight stories, community highlights, and Keys history.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Keys Life Magazine">
-  <link rel="canonical" href="https://keyslifemagazine.com/articles/">
-  <title>All Stories | Keys Life Magazine | Florida Keys Magazine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --dark: #1a0e1e;
-      --dark-surface: #241529;
-      --warm-coral: #e8725c;
-      --golden: #f0a050;
-      --soft-pink: #d4918a;
-      --pale-sky: #f5e6df;
-      --cream: #faf6f3;
-      --text-dark: #2a1a1e;
-      --text-light: #f5e6df;
-      --glass: rgba(255, 255, 255, 0.06);
-      --glass-light: rgba(26, 14, 30, 0.04);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-dark);
-      background-color: var(--cream);
-      line-height: 1.6;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      background: transparent;
-      backdrop-filter: none;
-    }
-
-    nav.scrolled {
-      background: rgba(26, 14, 30, 0.85);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--golden);
-      text-decoration: none;
-    }
-
-    .nav-center {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .nav-center a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-center a:hover {
-      color: var(--golden);
-    }
-
-    .nav-center a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--warm-coral);
-      transition: width 0.3s ease;
-    }
-
-    .nav-center a:hover::after {
-      width: 100%;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-phone {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .nav-cta {
-      background: var(--warm-coral);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .nav-cta:hover {
-      background: var(--golden);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(232, 114, 92, 0.3);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 0.35rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: var(--text-light);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--dark);
-      z-index: 999;
-      padding: 6rem 2rem 2rem;
-      overflow-y: auto;
-    }
-
-    .mobile-menu.active {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .mobile-menu a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(245, 230, 223, 0.1);
-    }
-
-    .hero-banner {
-      background: linear-gradient(135deg, #241529 0%, #6a3c4e 25%, #e8725c 50%, #f0a050 75%, #f5d4b8 100%);
-      color: var(--text-light);
-      padding: 8rem 2rem 4rem;
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .hero-banner h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-banner p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .section-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      border-bottom: 2px solid rgba(26, 14, 30, 0.1);
-    }
-
-    .tab-button {
-      background: none;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .tab-button:hover {
-      color: var(--warm-coral);
-    }
-
-    .tab-button.active {
-      color: var(--warm-coral);
-      border-bottom-color: var(--warm-coral);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .article-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--glass-light);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      border: 1px solid rgba(26, 14, 30, 0.1);
-    }
-
-    .article-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 48px rgba(232, 114, 92, 0.2);
-      border-color: var(--warm-coral);
-    }
-
-    .article-image {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66.67%;
-      overflow: hidden;
-      background: linear-gradient(135deg, #241529, #6a3c4e);
-    }
-
-    .article-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .article-card:hover .article-image img {
-      transform: scale(1.05);
-    }
-
-    .article-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.7) 100%);
-      transition: background 0.3s ease;
-    }
-
-    .article-card:hover .article-overlay {
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.6) 100%);
-    }
-
-    .article-category {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: var(--warm-coral);
-      color: white;
-      padding: 0.35rem 0.85rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      z-index: 5;
-    }
-
-    .article-content {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: white;
-    }
-
-    .article-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text-dark);
-    }
-
-    .article-excerpt {
-      font-size: 0.9rem;
-      color: var(--text-dark);
-      opacity: 0.8;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .article-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-
-    .article-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-
-    .article-link {
-      color: var(--warm-coral);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .article-link:hover {
-      color: var(--golden);
-      transform: translateX(4px);
-    }
-
-    footer {
-      background: #0f0609;
-      color: var(--text-light);
-      padding: 3rem 2rem 1rem;
-      border-top: 1px solid rgba(245, 230, 223, 0.1);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-section h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--golden);
-    }
-
-    .footer-section a {
-      display: block;
-      color: var(--text-light);
-      text-decoration: none;
-      margin-bottom: 0.75rem;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    .footer-section a:hover {
-      color: var(--warm-coral);
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--golden);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(245, 230, 223, 0.1);
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-
-      .nav-center {
-        display: none;
-      }
-
-      .nav-right {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-        color: var(--text-light);
-      }
-
-      .hero-banner {
-        padding: 6rem 2rem 3rem;
-      }
-
-      .hero-banner h1 {
-        font-size: 2rem;
-      }
-
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tabs {
-        gap: 0.5rem;
-      }
-
-      .tab-button {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-banner h1 {
-        font-size: 1.5rem;
-      }
-
-      .tab-button {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.85rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All Stories - Keys Life Magazine. Browse spotlight articles, community stories, and Florida Keys history.">
+    <meta name="keywords" content="Keys Life Magazine stories, Florida Keys articles, community news">
+    <meta name="author" content="Keys Life Magazine">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <title>All Stories - Keys Life Magazine</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        :root {
+            --dark-navy: #1a1a2e;
+            --dark-surface: #16213e;
+            --dark-card: #1e2a45;
+            --coral: #e8725c;
+            --golden: #f0a050;
+            --cream: #faf6f3;
+            --pale: #f5ebe5;
+            --text-dark: #1a1a1a;
+            --text-light: #f0e6df;
+            --white: #ffffff;
+            --border-light: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            transition: box-shadow 0.3s ease;
+            padding: 0.75rem 2rem;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-logo {
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--coral);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .nav-phone {
+            color: var(--coral);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-advertise {
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-advertise:hover {
+            background: #d65a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 114, 92, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.4rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('hero-banner.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        /* Section styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab-button.active {
+            color: var(--coral);
+            border-bottom-color: var(--coral);
+        }
+
+        .tab-button:hover {
+            color: var(--coral);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            background: #e0e0e0;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-body {
+            padding: 1.5rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .article-date {
+            font-size: 0.85rem;
+        }
+
+        .article-link {
+            color: var(--coral);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #d65a4a;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tabs {
+                flex-direction: column;
+                border-bottom: none;
+            }
+
+            .tab-button {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            .tab-button.active {
+                border-bottom: none;
+                border-left-color: var(--coral);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0d1117;
+            color: #b0b0b0;
+            padding: 3rem 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--coral);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #1a1a2e;
+            border-radius: 50%;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--coral);
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav id="navbar">
-    <a href="index.html" class="nav-logo">Keys Life</a>
-    <div class="nav-center">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#spotlight">Spotlight</a>
-      <a href="index.html#community">Community</a>
-      <a href="index.html#history">History</a>
-      <a href="index.html#publications">Publications</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="tel:305-453-6674" class="nav-phone">305-453-6674</a>
-      <button class="nav-cta">Advertise</button>
-    </div>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine">
+            </div>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="index.html#spotlight">Spotlight</a>
-    <a href="index.html#community">Community</a>
-    <a href="index.html#history">History</a>
-    <a href="index.html#publications">Publications</a>
-    <a href="index.html#services">Services</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="tel:305-453-6674">305-453-6674</a>
-  </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#spotlight">Spotlight</a></li>
+                <li><a href="index.html#community">Community</a></li>
+                <li><a href="index.html#history">History</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
 
-  <div class="hero-banner">
-    <h1>All Stories</h1>
-    <p>Explore our complete collection of Spotlight features, Community highlights, and Keys history</p>
-  </div>
+            <div class="nav-right">
+                <div class="nav-phone">305-453-6674</div>
+                <button class="btn-advertise" onclick="location.href='index.html#contact'">Advertise</button>
+            </div>
 
-  <section>
-    <div class="section-container">
-      <div class="tabs">
-        <button class="tab-button active" onclick="switchTab('spotlight')">Spotlight</button>
-        <button class="tab-button" onclick="switchTab('community')">Community</button>
-        <button class="tab-button" onclick="switchTab('history')">History</button>
-      </div>
-
-      <div id="spotlight" class="tab-content active">
-        <div class="articles-grid">
-          <a href="https://keyslifemagazine.com/simple-to-smart-innovative-technology-solutions/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/51C8D913-518E-4B1B-ADC0-AB736F71BEF9_1_201_a-scaled.jpeg" alt="Simple to Smart - Innovative Technology Solutions">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Simple to Smart — Innovative Technology Solutions</h3>
-                <p class="article-excerpt">Three kids growing up in the Florida Keys turned their childhood tinkering into a smart home business that's transforming how locals live.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">March 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/the-octopus-marks-the-spot-mother-ocean/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/IMG_2795_cover-scaled-e1769915985559.jpeg" alt="The Octopus Marks the Spot - Mother Ocean">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The Octopus Marks the Spot — Mother Ocean</h3>
-                <p class="article-excerpt">X may mark the spot on a treasure map, but in the Keys, it's the Giant Pink Octopus atop a local treasure trove.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/changing-for-the-better-islamorada-medical-center/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/DSC_5786-scaled.jpg" alt="Changing for the Better - Islamorada Medical Center">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Changing for the Better — Islamorada Medical Center</h3>
-                <p class="article-excerpt">Dr. Miguel Diaz-Miret rebuilds his practice with renewed purpose after life forced a different path forward.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">January 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/catering-to-the-community-kaiyo-grill-sushi/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/774_a0Green012-scaled.jpg" alt="Catering to the Community - Kaiyo Grill & Sushi">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Catering to the Community — Kaiyo Grill & Sushi</h3>
-                <p class="article-excerpt">Black-and-white photos on the walls tell the story of a fishing village finding its rhythm.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">December 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/the-heritage-of-passion-bth-marine/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/Inside3-scaled.jpg" alt="The Heritage of Passion - BTH Marine">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The Heritage of Passion — BTH Marine</h3>
-                <p class="article-excerpt">A seven-year-old receives a broken-down boat as a birthday gift. By eight, he'd rebuilt it. A family legacy was born.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">October 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/wwhat-a-difference-dr-m-center/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/54469-1-scaled-e1762131188861-254x300.jpg" alt="What a Difference - Dr. M Center">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">What a Difference — Dr. M Center</h3>
-                <p class="article-excerpt">Discover how Dr. M Center is making a difference in the Florida Keys community.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">November 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/spotlight-article-7/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/spotlight-7.jpg" alt="Spotlight Article 7">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Local Business Spotlight</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">September 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/spotlight-article-8/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/spotlight-8.jpg" alt="Spotlight Article 8">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Community Innovation</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">August 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/spotlight-article-9/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/08/spotlight-9.jpg" alt="Spotlight Article 9">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Keys Entrepreneur Profile</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">July 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/spotlight-article-10/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/07/spotlight-10.jpg" alt="Spotlight Article 10">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Hidden Gems of the Keys</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">June 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
+    </nav>
 
-      <div id="community" class="tab-content">
-        <div class="articles-grid">
-          <a href="https://keyslifemagazine.com/coral-shores-high-school-drama-club-presents-in-the-heights/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_1252-copy-scaled.jpg" alt="Coral Shores High School Drama Club">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Coral Shores High School Drama Club Presents In the Heights</h3>
-                <p class="article-excerpt">Vibrant rhythms and heartfelt stories as the Drama Club showcases talent, heart, and cultural pride.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>All Stories</h1>
+    </section>
 
-          <a href="https://keyslifemagazine.com/the-4-way-test-key-largo-rotary-club/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/487708434_992664763058214_123715252335958002_n-768x550.jpg" alt="The 4-Way Test - Key Largo Rotary Club">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
+    <!-- Articles Section -->
+    <section>
+        <div class="section-container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="switchTab(event, 'spotlight')">Spotlight</button>
+                <button class="tab-button" onclick="switchTab(event, 'community')">Community</button>
+                <button class="tab-button" onclick="switchTab(event, 'history')">History</button>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The 4-Way Test — Key Largo Rotary Club</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
 
-          <a href="https://keyslifemagazine.com/breeze-through-the-keys-motor-breeze/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_8435-1-scaled.jpeg" alt="Breeze Through the Keys - Motor Breeze">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Breeze Through the Keys — Motor Breeze</h3>
-                <p class="article-excerpt">A former yacht broker turned auto concierge recognized that Keys residents faced unnecessary hassle.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+            <!-- Spotlight Tab -->
+            <div id="spotlight" class="tab-content active">
+                <div class="articles-grid">
+                    <a href="https://keyslifemagazine.com/simple-to-smart-innovative-technology-solutions/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/51C8D913-518E-4B1B-ADC0-AB736F71BEF9_1_201_a-scaled.jpeg" alt="Simple to Smart">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Simple to Smart — Innovative Technology Solutions</h3>
+                                <p class="article-excerpt">Three kids growing up in the Florida Keys turned their childhood tinkering into a smart home business that's transforming how locals live.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">March 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/14546-2bringing-it-into-focus-film-javier/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/JAVI-AMANDA-1-768x512.jpg" alt="Bringing It Into Focus - FilmJavier">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Bringing It Into Focus — FilmJavier</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">January 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/the-octopus-marks-the-spot-mother-ocean/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/IMG_2795_cover-scaled-e1769915985559.jpeg" alt="The Octopus Marks the Spot">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">The Octopus Marks the Spot — Mother Ocean</h3>
+                                <p class="article-excerpt">In the Keys, it's the Giant Pink Octopus atop a local treasure trove of a store that marks the spot.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">February 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/blowtorching-boats-aquaphobix/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/thumbnail_IMG_4551-768x512.jpg" alt="Blowtorching Boats - Aquaphobix">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Blowtorching Boats — Aquaphobix</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">December 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/changing-for-the-better-islamorada-medical-center/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/DSC_5786-scaled.jpg" alt="Changing for the Better">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Changing for the Better — Islamorada Medical Center</h3>
+                                <p class="article-excerpt">Dr. Miguel Diaz-Miret rebuilds his medical practice with renewed purpose after life forced a different path.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">January 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/monty-pythons-edukational-show-presented-by-the-key-players/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/2025-12-08-19.10.57-300x169.jpg" alt="Monty Python's Show - The Key Players">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Monty Python's Edukational Show — The Key Players</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">December 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/catering-to-the-community-kaiyo-grill-sushi/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/774_a0Green012-scaled.jpg" alt="Kaiyo Grill & Sushi">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Catering to the Community — Kaiyo Grill & Sushi</h3>
+                                <p class="article-excerpt">Black-and-white photos on the walls tell the story of a fishing village finding its rhythm.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">December 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/community-event-7/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/community-7.jpg" alt="Community Event 7">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Local Charity Event Success</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">November 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/wwhat-a-difference-dr-m-center/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/54469-1-scaled-e1762131188861-254x300.jpg" alt="Dr. M Center">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">What a Difference — Dr. M Center</h3>
+                                <p class="article-excerpt">Discover how Dr. M Center is making a difference in the Florida Keys community.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">November 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/community-event-8/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/community-8.jpg" alt="Community Event 8">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Festival Season in the Keys</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">October 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/the-heritage-of-passion-bth-marine/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/Inside3-scaled.jpg" alt="BTH Marine">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">The Heritage of Passion — BTH Marine</h3>
+                                <p class="article-excerpt">A seven-year-old receives a broken-down boat as a birthday gift. By eight, he'd rebuilt it.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">October 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/community-event-9/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/community-9.jpg" alt="Community Event 9">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Youth Programs Making Waves</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">September 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+                    <a href="https://keyslifemagazine.com/perfectly-aligned-seaside-chiropractic/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/Seaside-Chiropractic-Inc.-Keys-Life-284x300.png" alt="Seaside Chiropractic">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Perfectly Aligned — Seaside Chiropractic</h3>
+                                <p class="article-excerpt">Discover how Seaside Chiropractic brings wellness to the Florida Keys community.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">September 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-          <a href="https://keyslifemagazine.com/community-event-10/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/08/community-10.jpg" alt="Community Event 10">
-              <div class="article-overlay"></div>
-              <span class="article-category">Community</span>
+                    <a href="https://keyslifemagazine.com/tackle-the-elements-ti-tackle/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/07/TOC_Photo-KLM-270x300.jpg" alt="Ti Tackle">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Tackle the Elements — Ti Tackle</h3>
+                                <p class="article-excerpt">From fishing to adventure, Ti Tackle equips the Florida Keys community for every journey.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">July 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/here-comes-the-cavalry-servpro/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/06/506775878_1409935923382674_9155806733275900707_n-scaled-e1751310154222-266x300.jpg" alt="SERVPRO">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Here Comes the Cavalry — SERVPRO</h3>
+                                <p class="article-excerpt">SERVPRO brings restoration and peace of mind to Florida Keys homes and businesses.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">June 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/paradise-from-all-perspectives-shane-wilson/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/05/Cropped-Boat-Photo-1-scaled-e1748790767473-300x211.jpg" alt="Shane Wilson">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Spotlight</span>
+                                <h3 class="article-title">Paradise From All Perspectives — Shane Wilson</h3>
+                                <p class="article-excerpt">Through the lens of talented photographer Shane Wilson, see the Florida Keys anew.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">May 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Environmental Conservation Efforts</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">August 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
+
+            <!-- Community Tab -->
+            <div id="community" class="tab-content">
+                <div class="articles-grid">
+                    <a href="https://keyslifemagazine.com/coral-shores-high-school-drama-club-presents-in-the-heights/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_1252-copy-scaled.jpg" alt="Coral Shores Drama Club">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Coral Shores High School Drama Club Presents In the Heights</h3>
+                                <p class="article-excerpt">Vibrant rhythms and heartfelt stories as the Drama Club showcases talent, heart, and cultural pride.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">March 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/the-4-way-test-key-largo-rotary-club/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/487708434_992664763058214_123715252335958002_n-768x550.jpg" alt="Key Largo Rotary Club">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">The 4-Way Test — Key Largo Rotary Club</h3>
+                                <p class="article-excerpt">Key Largo Rotary Club upholds community service through the guiding 4-Way Test principles.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">February 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/breeze-through-the-keys-motor-breeze/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_8435-1-scaled.jpeg" alt="Motor Breeze">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Breeze Through the Keys — Motor Breeze</h3>
+                                <p class="article-excerpt">A former yacht broker turned auto concierge recognized that Keys residents faced unnecessary hassle.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">February 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/14546-2bringing-it-into-focus-film-javier/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/JAVI-AMANDA-1-768x512.jpg" alt="FilmJavier">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Bringing It Into Focus — FilmJavier</h3>
+                                <p class="article-excerpt">FilmJavier brings creative storytelling and visual artistry to the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">January 2026</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/blowtorching-boats-aquaphobix/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/thumbnail_IMG_4551-768x512.jpg" alt="Aquaphobix">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Blowtorching Boats — Aquaphobix</h3>
+                                <p class="article-excerpt">Aquaphobix brings a unique approach to marine maintenance in the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">December 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/monty-pythons-edukational-show-presented-by-the-key-players/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/2025-12-08-19.10.57-300x169.jpg" alt="The Key Players">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Monty Python's Edukational Show — The Key Players</h3>
+                                <p class="article-excerpt">The Key Players bring Monty Python's irreverent humor to the Florida Keys stage.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">December 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/in-paradise-for-good-community-foundation/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/community-foundation-300x200.jpg" alt="Community Foundation">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">In Paradise for Good — Community Foundation of the FL Keys</h3>
+                                <p class="article-excerpt">Supporting the Florida Keys community through philanthropy and meaningful giving.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">December 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/pickle-in-paradise-pickleball-tournament/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/pickleball-300x200.jpg" alt="Pickleball">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Pickle in Paradise — Pickleball Tournament</h3>
+                                <p class="article-excerpt">The Florida Keys comes together for friendly competition and community spirit.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">November 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/throw-your-hat-in-the-ring-tiki-island-wear/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/tiki-island-300x200.jpg" alt="Tiki Island Wear">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Throw Your Hat in the Ring — Tiki Island Wear</h3>
+                                <p class="article-excerpt">Local fashion and island style find their perfect home at Tiki Island Wear.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">November 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/making-it-right-law-offices-kha/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/law-offices-300x200.jpg" alt="Law Offices">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">Community</span>
+                                <h3 class="article-title">Making It Right — Law Offices of K.H.A</h3>
+                                <p class="article-excerpt">Dedicated legal services for the Florida Keys community.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">November 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </a>
+
+            <!-- History Tab -->
+            <div id="history" class="tab-content">
+                <div class="articles-grid">
+                    <a href="https://keyslifemagazine.com/alligator-reef-lighthouse/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/Alligator_Reef-Lighthouse-KLM.png" alt="Alligator Reef Lighthouse">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">The Story of Alligator Reef Lighthouse</h3>
+                                <p class="article-excerpt">Standing tall and weathered in the turquoise sea, a piece of maritime history and community resilience.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">September 2025</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/mosquitos-to-the-rescue/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2024/10/EteOMCdP-scaled-1-300x172.jpg" alt="Mosquitos">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Mosquitos to the Rescue</h3>
+                                <p class="article-excerpt">An unlikely hero in the history of the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">October 2024</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/keys-castle-was-a-treasure-trove-of-keys-history/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2023/06/Art-McKee-right-Mickey-Spillane-by-Irving-and-Jeane-Eyster-with-Matecumbe-Historic-Trust-300x239.jpg" alt="Keys Castle">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Keys Castle Was a Treasure Trove of Keys History</h3>
+                                <p class="article-excerpt">Art McKee's treasure museum was once one of the most fascinating attractions in the Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">June 2023</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/life-in-adderley-town/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2023/05/adderley-300x200.jpg" alt="Adderley Town">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Life in Adderley Town</h3>
+                                <p class="article-excerpt">Explore the rich cultural heritage of Adderley Town in the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">May 2023</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/the-man-who-planted-american-flag/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2023/03/flag-300x200.jpg" alt="American Flag">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">The Man Who Planted the American Flag</h3>
+                                <p class="article-excerpt">A unique piece of Florida Keys history and patriotic legacy.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">March 2023</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/a-light-to-the-past-key-largo-lighthouse/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2023/01/key-largo-lighthouse-300x200.jpg" alt="Key Largo Lighthouse">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">A Light to the Past — Key Largo Lighthouse</h3>
+                                <p class="article-excerpt">The historic lighthouse that guided generations through Florida Keys waters.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">January 2023</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/pirates-pineapples-history-of-elliott-key/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2022/12/DSC_0084_1-300x199.jpg" alt="Elliott Key">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Pirates & Pineapples — History of Elliott Key</h3>
+                                <p class="article-excerpt">The colorful history of Elliott Key, from pirates and wreckers to pineapple farmers.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">December 2022</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/spooky-history-robert-the-doll/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2022/09/robert-doll-300x200.jpg" alt="Robert the Doll">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Spooky History of Robert the Doll</h3>
+                                <p class="article-excerpt">The mysterious legend of one of America's most famous haunted objects.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">September 2022</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/little-by-little-key-largo-fisheries/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2022/08/fisheries-300x200.jpg" alt="Key Largo Fisheries">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Little By Little — Key Largo Fisheries</h3>
+                                <p class="article-excerpt">The history and heritage of fishing traditions in the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">August 2022</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/glitz-glam-hollywood-in-the-keys/">
+                        <div class="article-card">
+                            <div class="article-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2022/07/hollywood-300x200.jpg" alt="Hollywood in the Keys">
+                            </div>
+                            <div class="article-body">
+                                <span class="article-category">History</span>
+                                <h3 class="article-title">Glitz and Glam of Hollywood in the Keys</h3>
+                                <p class="article-excerpt">When celebrities and filmmakers discovered the beauty of the Florida Keys.</p>
+                                <div class="article-footer">
+                                    <span class="article-date">July 2022</span>
+                                    <span class="article-link">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div id="history" class="tab-content">
-        <div class="articles-grid">
-          <a href="https://keyslifemagazine.com/alligator-reef-lighthouse/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/Alligator_Reef-Lighthouse-KLM.png" alt="The Story of Alligator Reef Lighthouse">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine">
+                </div>
+                <p>The Florida Keys' premier magazine reaching 26,000+ homes monthly with direct mail advertising and digital marketing services.</p>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The Story of Alligator Reef Lighthouse</h3>
-                <p class="article-excerpt">Standing tall and weathered in the turquoise sea, this lighthouse represents maritime history and community resilience.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">September 2025</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
 
-          <a href="https://keyslifemagazine.com/mosquitos-to-the-rescue/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2024/10/EteOMCdP-scaled-1-300x172.jpg" alt="Mosquitos to the Rescue">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html#home">Home</a>
+                <a href="index.html#spotlight">Spotlight</a>
+                <a href="index.html#community">Community</a>
+                <a href="index.html#history">History</a>
+                <a href="index.html#publications">Publications</a>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Mosquitos to the Rescue</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">October 2024</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
 
-          <a href="https://keyslifemagazine.com/keys-castle-was-a-treasure-trove-of-keys-history/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2023/06/Art-McKee-right-Mickey-Spillane-by-Irving-and-Jeane-Eyster-with-Matecumbe-Historic-Trust-300x239.jpg" alt="Keys Castle">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
+            <div class="footer-section">
+                <h4>Content</h4>
+                <a href="articles.html#spotlight">All Spotlights</a>
+                <a href="articles.html#community">Community Stories</a>
+                <a href="articles.html#history">History Articles</a>
+                <a href="https://keyslifemagazine.com/archives-past-issues/">Past Issues</a>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Keys Castle Was a Treasure Trove of Keys History</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">June 2023</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
 
-          <a href="https://keyslifemagazine.com/pirates-pineapples-history-of-elliott-key/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/12/DSC_0084_1-300x199.jpg" alt="Pirates & Pineapples - Elliott Key">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="index.html#services">Magazine Advertising</a>
+                <a href="index.html#services">Website Design</a>
+                <a href="index.html#services">SEO Management</a>
+                <a href="index.html#services">Social Media</a>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Pirates & Pineapples — History of Elliott Key</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">December 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
 
-          <a href="https://keyslifemagazine.com/history-article-5/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/10/history-5.jpg" alt="History Article 5">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <address>
+                    <p>90773 Old Highway, Unit #3<br>Tavernier, FL 33070</p>
+                    <p><a href="tel:305-453-6674">305-453-6674</a></p>
+                    <p><a href="mailto:sales@keyslifemagazine.com">sales@keyslifemagazine.com</a></p>
+                </address>
+                <div class="footer-social">
+                    <a href="https://facebook.com/KeysLifeMagazine/" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/keyslifemagazine/" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Early Settlers of the Keys</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">October 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/history-article-6/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/08/history-6.jpg" alt="History Article 6">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The Overseas Railroad Legacy</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">August 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/history-article-7/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/06/history-7.jpg" alt="History Article 7">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Fort Jefferson: Fortress of the Keys</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">June 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/history-article-8/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/04/history-8.jpg" alt="History Article 8">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Wrecking Industry in the Keys</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">April 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/history-article-9/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2022/02/history-9.jpg" alt="History Article 9">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Native Heritage and the Seminole Connection</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2022</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
-
-          <a href="https://keyslifemagazine.com/history-article-10/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/history-10.jpg" alt="History Article 10">
-              <div class="article-overlay"></div>
-              <span class="article-category">History</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Key West's Maritime Traditions</h3>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">December 2021</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="footer-logo">Keys Life Magazine</div>
-        <p style="opacity: 0.8; font-size: 0.9rem;">The Florida Keys' only direct mail magazine reaching 26,000 homes monthly from Ocean Reef to Long Key.</p>
-      </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Keys Life Magazine. All rights reserved.</p>
+        </div>
+    </footer>
 
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="index.html#spotlight">Spotlight</a>
-        <a href="index.html#community">Community</a>
-        <a href="index.html#history">History</a>
-        <a href="index.html#publications">Publications</a>
-      </div>
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-      <div class="footer-section">
-        <h4>Content</h4>
-        <a href="articles.html?tab=spotlight">Spotlight Stories</a>
-        <a href="articles.html?tab=community">Community Highlights</a>
-        <a href="articles.html?tab=history">Keys History</a>
-        <a href="https://keyslifemagazine.com/archives-past-issues/">Past Issues</a>
-      </div>
+        // Tab switching
+        function switchTab(event, tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
 
-      <div class="footer-section">
-        <h4>Services</h4>
-        <a href="https://keyslifemagazine.com/">Magazine Advertising</a>
-        <a href="https://keyslifemagazine.com/">Web Design</a>
-        <a href="https://keyslifemagazine.com/">Social Media</a>
-        <a href="https://keyslifemagazine.com/">SEO Services</a>
-      </div>
+            // Remove active class from all buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
 
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <address>
-          90773 Old Highway<br>
-          Unit #3<br>
-          Tavernier, FL 33070<br><br>
-          <a href="tel:305-453-6674" style="color: var(--warm-coral); text-decoration: none;">305-453-6674</a><br>
-          <a href="mailto:sales@keyslifemagazine.com" style="color: var(--warm-coral); text-decoration: none;">sales@keyslifemagazine.com</a>
-        </address>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Keys Life Magazine. All rights reserved. The Florida Keys' Premier Direct Mail Publication.</p>
-    </div>
-  </footer>
-
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    function switchTab(tabName) {
-      const tabs = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-button');
-
-      tabs.forEach(tab => tab.classList.remove('active'));
-      buttons.forEach(button => button.classList.remove('active'));
-
-      document.getElementById(tabName).classList.add('active');
-      event.target.classList.add('active');
-    }
-  </script>
+            // Show the selected tab
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>

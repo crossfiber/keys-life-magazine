@@ -1,2248 +1,2001 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Keys Life Magazine: The Florida Keys' only direct mail magazine reaching 26,000 homes monthly. Spotlight stories, community highlights, Keys history, and advertising solutions from Ocean Reef to Long Key.">
-  <meta name="keywords" content="Florida Keys magazine, Tavernier advertising, direct mail Keys, community stories, Keys life">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Keys Life Magazine">
-  <meta name="theme-color" content="#1a0e1e">
-  <meta property="og:title" content="Keys Life Magazine | Florida Keys Direct Mail Advertising & Digital Marketing">
-  <meta property="og:description" content="The Florida Keys' only direct mail magazine reaching 26,000 homes monthly from Ocean Reef to Long Key. Advertising solutions, community stories, and Keys history.">
-  <meta property="og:image" content="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png">
-  <meta property="og:url" content="https://keyslifemagazine.com/">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Keys Life Magazine | Florida Keys Direct Mail Advertising">
-  <meta name="twitter:description" content="The Florida Keys' only direct mail magazine reaching 26,000 homes monthly.">
-  <meta name="twitter:image" content="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png">
-  <meta name="geo.position" content="25.0114;-80.5178">
-  <meta name="geo.placename" content="Tavernier, Florida">
-  <meta name="geo.region" content="US-FL">
-  <link rel="canonical" href="https://keyslifemagazine.com/">
-  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect fill='%231a0e1e' width='32' height='32'/><text x='50%' y='50%' font-size='20' font-weight='bold' fill='%23f0a050' text-anchor='middle' dy='.3em'>K</text></svg>">
-  <title>Keys Life Magazine | Florida Keys Direct Mail Advertising & Digital Marketing | Tavernier, FL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --dark: #1a0e1e;
-      --dark-surface: #241529;
-      --warm-coral: #e8725c;
-      --golden: #f0a050;
-      --soft-pink: #d4918a;
-      --pale-sky: #f5e6df;
-      --cream: #faf6f3;
-      --text-dark: #2a1a1e;
-      --text-light: #f5e6df;
-      --glass: rgba(255, 255, 255, 0.06);
-      --glass-light: rgba(26, 14, 30, 0.04);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-dark);
-      background-color: var(--cream);
-      line-height: 1.6;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 1.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.3s ease;
-      background: transparent;
-      backdrop-filter: none;
-    }
-
-    nav.scrolled {
-      background: rgba(26, 14, 30, 0.85);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--golden);
-      text-decoration: none;
-    }
-
-    .nav-center {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .nav-center a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-
-    .nav-center a:hover {
-      color: var(--golden);
-    }
-
-    .nav-center a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--warm-coral);
-      transition: width 0.3s ease;
-    }
-
-    .nav-center a:hover::after {
-      width: 100%;
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .nav-phone {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .nav-phone:hover {
-      color: var(--golden);
-    }
-
-    .nav-cta {
-      background: var(--warm-coral);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .nav-cta:hover {
-      background: var(--golden);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(232, 114, 92, 0.3);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 0.35rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: var(--text-light);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--dark);
-      z-index: 999;
-      padding: 6rem 2rem 2rem;
-      overflow-y: auto;
-    }
-
-    .mobile-menu.active {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .mobile-menu a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 600;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(245, 230, 223, 0.1);
-      animation: slideInLeft 0.3s ease forwards;
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #241529 0%, #6a3c4e 25%, #e8725c 50%, #f0a050 75%, #f5d4b8 100%);
-      overflow: hidden;
-      margin-top: 0;
-      padding: 4rem 2rem;
-    }
-
-    .hero canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.4;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: var(--text-light);
-      max-width: 800px;
-    }
-
-    .hero-logo {
-      width: 200px;
-      height: 200px;
-      margin: 0 auto 2rem;
-      background: rgba(26, 14, 30, 0.3);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      backdrop-filter: blur(10px);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .hero-logo img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      filter: brightness(1.1);
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero .tagline {
-      font-size: 1.3rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      opacity: 0.95;
-      letter-spacing: 0.5px;
-    }
-
-    .hero .subtitle {
-      font-size: 1.1rem;
-      margin-bottom: 3rem;
-      opacity: 0.9;
-      font-weight: 400;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-primary {
-      background: var(--warm-coral);
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 12px 32px rgba(232, 114, 92, 0.25);
-    }
-
-    .cta-primary:hover {
-      background: var(--golden);
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(240, 160, 80, 0.3);
-    }
-
-    .cta-outline {
-      background: transparent;
-      color: var(--text-light);
-      padding: 1rem 2.5rem;
-      border: 2px solid var(--text-light);
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .cta-outline:hover {
-      background: var(--text-light);
-      color: var(--dark);
-      border-color: var(--text-light);
-      transform: translateY(-4px);
-    }
-
-    .current-issue {
-      background: var(--cream);
-      padding: 2rem;
-      border-bottom: 1px solid rgba(26, 14, 30, 0.1);
-    }
-
-    .current-issue-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-    }
-
-    .current-issue-image {
-      flex: 0 0 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-    }
-
-    .current-issue-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .current-issue-content {
-      flex: 1;
-    }
-
-    .current-issue-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    .current-issue-content p {
-      color: var(--text-dark);
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.8;
-    }
-
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .section-light {
-      background: var(--cream);
-    }
-
-    .section-dark {
-      background: var(--dark);
-    }
-
-    .section-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-dark .section-title {
-      color: var(--text-light);
-    }
-
-    .section-light .section-title {
-      color: var(--text-dark);
-    }
-
-    .section-line {
-      width: 60px;
-      height: 3px;
-      background: var(--warm-coral);
-      margin: 1rem auto 0;
-      border-radius: 2px;
-    }
-
-    .spotlight-layout {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 2rem;
-    }
-
-    .featured-card {
-      grid-column: 1;
-      grid-row: 1 / 3;
-    }
-
-    .stacked-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .article-card {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .article-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 48px rgba(232, 114, 92, 0.2);
-    }
-
-    .article-image {
-      position: relative;
-      width: 100%;
-      padding-bottom: 66.67%;
-      overflow: hidden;
-      background: linear-gradient(135deg, #241529, #6a3c4e);
-    }
-
-    .featured-card .article-image {
-      padding-bottom: 66.67%;
-    }
-
-    .article-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .article-card:hover .article-image img {
-      transform: scale(1.05);
-    }
-
-    .article-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.7) 100%);
-      transition: background 0.3s ease;
-    }
-
-    .article-card:hover .article-overlay {
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.6) 100%);
-    }
-
-    .article-category {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: var(--warm-coral);
-      color: white;
-      padding: 0.35rem 0.85rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      z-index: 5;
-    }
-
-    .article-content {
-      padding: 1.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-    }
-
-    .section-dark .article-content {
-      background: rgba(36, 21, 41, 0.6);
-    }
-
-    .section-light .article-content {
-      background: rgba(26, 14, 30, 0.04);
-    }
-
-    .article-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--text-dark);
-    }
-
-    .section-dark .article-title {
-      color: var(--text-light);
-    }
-
-    .article-excerpt {
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      opacity: 0.8;
-      margin-bottom: 1rem;
-      line-height: 1.5;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .section-dark .article-excerpt {
-      color: var(--text-light);
-    }
-
-    .article-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-
-    .article-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      opacity: 0.7;
-    }
-
-    .article-link {
-      color: var(--warm-coral);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 0.9rem;
-    }
-
-    .article-link:hover {
-      color: var(--golden);
-      transform: translateX(4px);
-    }
-
-    .cards-grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-    }
-
-    .community-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .history-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3rem;
-      margin: 3rem 0;
-    }
-
-    .stat-item {
-      text-align: center;
-      animation: fadeIn 0.8s ease;
-    }
-
-    .stat-number {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--golden);
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-light);
-      opacity: 0.9;
-      letter-spacing: 0.05em;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .about-content {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      text-align: center;
-    }
-
-    .about-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--text-light);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .publications-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .magazine-cover {
-      position: relative;
-      width: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-      animation: floatIn 0.6s ease;
-      cursor: pointer;
-    }
-
-    .magazine-cover:nth-child(1) {
-      transform: rotate(3deg) translateY(0);
-      z-index: 3;
-    }
-
-    .magazine-cover:nth-child(2) {
-      transform: rotate(-2deg) translateY(20px);
-      z-index: 2;
-    }
-
-    .magazine-cover:nth-child(3) {
-      transform: rotate(2deg) translateY(40px);
-      z-index: 1;
-    }
-
-    @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .magazine-cover:hover {
-      transform: rotate(0) translateY(-10px) !important;
-      box-shadow: 0 20px 48px rgba(232, 114, 92, 0.25);
-      z-index: 4 !important;
-    }
-
-    .magazine-cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: rgba(26, 14, 30, 0.04);
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(26, 14, 30, 0.1);
-    }
-
-    .service-card:hover {
-      background: rgba(26, 14, 30, 0.08);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-      border-color: var(--warm-coral);
-    }
-
-    .service-icon {
-      font-size: 2.5rem;
-      color: var(--warm-coral);
-      margin-bottom: 1rem;
-    }
-
-    .service-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--text-dark);
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-      color: var(--text-dark);
-      opacity: 0.8;
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
-    }
-
-    .service-link {
-      color: var(--warm-coral);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .service-link:hover {
-      color: var(--golden);
-      transform: translateX(4px);
-    }
-
-    .faq-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(245, 230, 223, 0.2);
-    }
-
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.5rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
-      font-weight: 600;
-      color: var(--text-light);
-      user-select: none;
-    }
-
-    .faq-question:hover {
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .faq-icon {
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
-    }
-
-    .faq-answer {
-      padding: 0 1.5rem 1.5rem;
-      display: none;
-      color: var(--text-light);
-      opacity: 0.85;
-      line-height: 1.7;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-      animation: slideDown 0.3s ease;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .contact-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 3rem;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group label {
-      color: var(--text-dark);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 0.85rem;
-      border: 1px solid rgba(26, 14, 30, 0.2);
-      border-radius: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      background: white;
-      color: var(--text-dark);
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--warm-coral);
-      box-shadow: 0 0 0 3px rgba(232, 114, 92, 0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .contact-submit {
-      background: var(--warm-coral);
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .contact-submit:hover {
-      background: var(--golden);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(232, 114, 92, 0.3);
-    }
-
-    .contact-info {
-      background: rgba(26, 14, 30, 0.04);
-      padding: 2rem;
-      border-radius: 12px;
-    }
-
-    .contact-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--text-dark);
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-    }
-
-    .contact-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-item strong {
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
-    .contact-item a {
-      color: var(--warm-coral);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-item a:hover {
-      color: var(--golden);
-    }
-
-    address {
-      font-style: normal;
-    }
-
-    .contact-hours {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(26, 14, 30, 0.1);
-    }
-
-    .contact-social {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .social-icon {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--warm-coral);
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      font-size: 1.1rem;
-    }
-
-    .social-icon:hover {
-      background: var(--golden);
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(232, 114, 92, 0.3);
-    }
-
-    footer {
-      background: #0f0609;
-      color: var(--text-light);
-      padding: 3rem 2rem 1rem;
-      border-top: 1px solid rgba(245, 230, 223, 0.1);
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .footer-section h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: var(--golden);
-    }
-
-    .footer-section a {
-      display: block;
-      color: var(--text-light);
-      text-decoration: none;
-      margin-bottom: 0.75rem;
-      opacity: 0.8;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-    }
-
-    .footer-section a:hover {
-      color: var(--warm-coral);
-      opacity: 1;
-      transform: translateX(4px);
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--golden);
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(245, 230, 223, 0.1);
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
-    .view-all-btn {
-      display: inline-block;
-      background: var(--warm-coral);
-      color: white;
-      padding: 0.9rem 2.2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .view-all-btn:hover {
-      background: var(--golden);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(232, 114, 92, 0.25);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .fade-in.visible {
-      animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.320, 1) forwards;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 1024px) {
-      .nav-center {
-        gap: 2rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .spotlight-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .featured-card {
-        grid-column: 1;
-        grid-row: auto;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 1rem;
-      }
-
-      .nav-center {
-        display: none;
-      }
-
-      .nav-right {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-        color: var(--text-light);
-      }
-
-      .hero {
-        min-height: 80vh;
-        padding: 2rem;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero .tagline {
-        font-size: 1rem;
-      }
-
-      .hero-logo {
-        width: 140px;
-        height: 140px;
-      }
-
-      .hero-logo img {
-        width: 120px;
-        height: 120px;
-      }
-
-      .hero-ctas {
-        gap: 1rem;
-      }
-
-      .cta-primary,
-      .cta-outline {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .section-title {
-        font-size: 1.8rem;
-      }
-
-      .cards-grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .community-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .history-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .current-issue-container {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      .current-issue-image {
-        flex: 0 0 auto;
-        max-width: 250px;
-      }
-
-      .stats-container {
-        gap: 2rem;
-      }
-
-      .stat-number {
-        font-size: 2rem;
-      }
-
-      .stat-label {
-        font-size: 0.85rem;
-      }
-
-      .publications-container {
-        gap: 1rem;
-      }
-
-      .magazine-cover {
-        width: 150px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero .tagline {
-        font-size: 0.9rem;
-      }
-
-      .hero-logo {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 1.5rem;
-      }
-
-      .hero-logo img {
-        width: 80px;
-        height: 80px;
-      }
-
-      .hero-ctas {
-        flex-direction: column;
-      }
-
-      .cta-primary,
-      .cta-outline {
-        width: 100%;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .article-title {
-        font-size: 1.2rem;
-      }
-
-      .stat-number {
-        font-size: 1.5rem;
-      }
-
-      .faq-question {
-        padding: 1rem;
-        font-size: 0.95rem;
-      }
-
-      .faq-answer {
-        padding: 0 1rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      .contact-info {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Keys Life Magazine - Florida Keys Direct Mail Advertising & Digital Marketing. Reach 26,000 homes monthly. Call 305-453-6674.">
+    <meta name="keywords" content="Keys Life Magazine, Florida Keys advertising, direct mail, digital marketing, Tavernier">
+    <meta name="author" content="Keys Life Magazine">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <!-- Geo Tags -->
+    <meta name="geo.position" content="25.0114;-80.5178">
+    <meta name="ICBM" content="25.0114, -80.5178">
+    <meta name="geo.placename" content="Tavernier, Florida">
+    <meta name="geo.region" content="US-FL">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://keyslifemagazine.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Keys Life Magazine | Florida Keys Advertising & Marketing">
+    <meta property="og:description" content="Reach 26,000+ homes monthly in the Florida Keys. Direct mail advertising, website design, SEO, and digital marketing services.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://keyslifemagazine.com/">
+    <meta property="og:image" content="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Keys Life Magazine | Florida Keys Advertising">
+    <meta name="twitter:description" content="26,000 magazines monthly, 94 rack locations, advertising & digital marketing services.">
+
+    <title>Keys Life Magazine | Florida Keys Direct Mail Advertising & Digital Marketing | Tavernier, FL</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        :root {
+            --dark-navy: #1a1a2e;
+            --dark-surface: #16213e;
+            --dark-card: #1e2a45;
+            --coral: #e8725c;
+            --golden: #f0a050;
+            --cream: #faf6f3;
+            --pale: #f5ebe5;
+            --text-dark: #1a1a1a;
+            --text-light: #f0e6df;
+            --white: #ffffff;
+            --border-light: rgba(255, 255, 255, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stats-font {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            transition: box-shadow 0.3s ease;
+            padding: 0.75rem 2rem;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .nav-logo {
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--coral);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .nav-phone {
+            color: var(--coral);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-advertise {
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-advertise:hover {
+            background: #d65a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 114, 92, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 0.4rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .nav-phone {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('hero-banner.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #d65a4a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(232, 114, 92, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: 2px solid var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--coral);
+            transform: translateY(-3px);
+        }
+
+        /* Floating particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Current Issue Strip */
+        .current-issue {
+            background: var(--cream);
+            padding: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .current-issue-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .current-issue-cover {
+            flex-shrink: 0;
+            width: 120px;
+        }
+
+        .current-issue-cover img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .current-issue-text {
+            flex: 1;
+        }
+
+        .current-issue-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .current-issue-link {
+            color: var(--coral);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .current-issue-link:hover {
+            color: #d65a4a;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .current-issue-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Section styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--coral);
+            margin: 1rem auto 2rem;
+        }
+
+        /* Dark sections */
+        .dark-section {
+            background: var(--dark-navy);
+            color: var(--text-light);
+        }
+
+        .dark-section .section-title {
+            color: var(--text-light);
+        }
+
+        /* Spotlight Section */
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .spotlight-featured {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .spotlight-stacked {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .dark-section .card {
+            background: var(--dark-card);
+            border: 1px solid var(--border-light);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: #e0e0e0;
+        }
+
+        .spotlight-featured .card-image {
+            height: 400px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-category {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .dark-section .card-category {
+            background: var(--golden);
+            color: var(--text-dark);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .dark-section .card-title {
+            color: var(--text-light);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .dark-section .card-excerpt {
+            color: #b0b0b0;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .dark-section .card-footer {
+            border-top-color: var(--border-light);
+            color: #a0a0a0;
+        }
+
+        .card-date {
+            font-size: 0.85rem;
+        }
+
+        .card-read-more {
+            color: var(--coral);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .card-read-more:hover {
+            color: #d65a4a;
+            text-decoration: underline;
+        }
+
+        /* Row of 3 cards */
+        .cards-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .spotlight-featured {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .cards-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-row {
+                grid-template-columns: 1fr;
+            }
+
+            .card-image {
+                height: 250px;
+            }
+        }
+
+        /* Community Highlights */
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .community-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* History Grid */
+        .history-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .history-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .history-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* View All Button */
+        .view-all-btn {
+            display: inline-block;
+            background: var(--coral);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .view-all-btn:hover {
+            background: #d65a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 114, 92, 0.3);
+        }
+
+        .dark-section .view-all-btn {
+            background: var(--golden);
+            color: var(--text-dark);
+        }
+
+        .dark-section .view-all-btn:hover {
+            background: #e69145;
+        }
+
+        /* Current Issues Section */
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .issue-item {
+            text-align: center;
+        }
+
+        .issue-cover {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .issue-cover:hover {
+            transform: perspective(1000px) rotateY(-5deg) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .issue-cover img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .issue-month {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .issue-link {
+            color: var(--coral);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .issue-link:hover {
+            color: #d65a4a;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            .issues-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .issues-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--dark-surface);
+        }
+
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-heading {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .stats-text {
+            text-align: center;
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--golden);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--coral);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .faq-question {
+            background: transparent;
+            color: var(--text-light);
+            border: none;
+            padding: 1.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--golden);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(232, 114, 92, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: var(--coral);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .form-submit:hover {
+            background: #d65a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(232, 114, 92, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-block {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .info-block i {
+            font-size: 1.5rem;
+            color: var(--coral);
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .info-block-text {
+            flex: 1;
+        }
+
+        .info-block-text h4 {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .info-block-text p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--pale);
+            border-radius: 50%;
+            color: var(--coral);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--coral);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        #map {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0d1117;
+            color: #b0b0b0;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--coral);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: center;
+        }
+
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #1a1a2e;
+            border-radius: 50%;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--coral);
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav id="navbar">
-    <a href="#home" class="nav-logo">Keys Life</a>
-    <div class="nav-center">
-      <a href="#home">Home</a>
-      <a href="#spotlight">Spotlight</a>
-      <a href="#community">Community</a>
-      <a href="#history">History</a>
-      <a href="#publications">Publications</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="tel:305-453-6674" class="nav-phone">305-453-6674</a>
-      <button class="nav-cta">Advertise</button>
-    </div>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
-    <a href="#spotlight">Spotlight</a>
-    <a href="#community">Community</a>
-    <a href="#history">History</a>
-    <a href="#publications">Publications</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-    <a href="tel:305-453-6674">305-453-6674</a>
-  </div>
-
-  <section class="hero" id="home">
-    <canvas id="particleCanvas"></canvas>
-    <div class="hero-content">
-      <div class="hero-logo">
-        <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine Logo">
-      </div>
-      <h1>Keys Life Magazine</h1>
-      <p class="tagline">The Florida Keys' Only Direct Mail Magazine</p>
-      <p class="subtitle">Reaching 26,000 Homes Monthly from Ocean Reef to Long Key</p>
-      <div class="hero-ctas">
-        <button class="cta-primary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Advertise With Us</button>
-        <a href="https://keyslifemagazine.com/march-2026/" class="cta-outline">Read Current Issue</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="current-issue">
-    <div class="current-issue-container">
-      <div class="current-issue-image">
-        <img src="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png" alt="March 2026 Issue Cover">
-      </div>
-      <div class="current-issue-content">
-        <h2>March 2026 Issue — Now Available</h2>
-        <p>Explore the latest stories, spotlights, and community highlights from your favorite Keys Life Magazine.</p>
-        <a href="https://keyslifemagazine.com/march-2026/" class="cta-primary" style="display: inline-block; text-decoration: none;">Read Online</a>
-      </div>
-    </div>
-  </div>
-
-  <section id="spotlight" class="section-dark fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Keys Life Spotlight</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="spotlight-layout">
-        <a href="https://keyslifemagazine.com/simple-to-smart-innovative-technology-solutions/" class="article-card featured-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/51C8D913-518E-4B1B-ADC0-AB736F71BEF9_1_201_a-scaled.jpeg" alt="Simple to Smart - Innovative Technology Solutions">
-            <div class="article-overlay"></div>
-            <span class="article-category">Spotlight</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Simple to Smart — Innovative Technology Solutions</h3>
-              <p class="article-excerpt">Three kids growing up in the Florida Keys turned their childhood tinkering into a smart home business that's transforming how locals live.</p>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine">
             </div>
-            <div class="article-meta">
-              <span class="article-date">March 2026</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
 
-        <div class="stacked-cards">
-          <a href="https://keyslifemagazine.com/the-octopus-marks-the-spot-mother-ocean/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/IMG_2795_cover-scaled-e1769915985559.jpeg" alt="The Octopus Marks the Spot - Mother Ocean">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
-            </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">The Octopus Marks the Spot — Mother Ocean</h3>
-                <p class="article-excerpt">X may mark the spot on a treasure map, but in the Keys, it's the Giant Pink Octopus atop a local treasure trove.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">February 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#spotlight">Spotlight</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-          <a href="https://keyslifemagazine.com/changing-for-the-better-islamorada-medical-center/" class="article-card">
-            <div class="article-image">
-              <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/DSC_5786-scaled.jpg" alt="Changing for the Better - Islamorada Medical Center">
-              <div class="article-overlay"></div>
-              <span class="article-category">Spotlight</span>
+            <div class="nav-right">
+                <div class="nav-phone">305-453-6674</div>
+                <button class="btn-advertise" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise</button>
             </div>
-            <div class="article-content">
-              <div>
-                <h3 class="article-title">Changing for the Better — Islamorada Medical Center</h3>
-                <p class="article-excerpt">Dr. Miguel Diaz-Miret rebuilds his practice with renewed purpose after life forced a different path forward.</p>
-              </div>
-              <div class="article-meta">
-                <span class="article-date">January 2026</span>
-                <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-              </div>
-            </div>
-          </a>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
+    </nav>
 
-      <div class="cards-grid-3" style="margin-top: 3rem;">
-        <a href="https://keyslifemagazine.com/catering-to-the-community-kaiyo-grill-sushi/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/774_a0Green012-scaled.jpg" alt="Catering to the Community - Kaiyo Grill & Sushi">
-            <div class="article-overlay"></div>
-            <span class="article-category">Spotlight</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Catering to the Community — Kaiyo Grill & Sushi</h3>
-              <p class="article-excerpt">Black-and-white photos on the walls tell the story of a fishing village finding its rhythm.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas class="particles" id="particleCanvas"></canvas>
+        <div class="hero-content">
+            <h1>The Florida Keys' Premier Magazine</h1>
+            <p class="hero-subtitle">Reaching 26,000 homes monthly from Ocean Reef to Long Key</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise With Us</button>
+                <a href="#publications" class="btn-secondary">Read Current Issue</a>
             </div>
-            <div class="article-meta">
-              <span class="article-date">December 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/the-heritage-of-passion-bth-marine/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/Inside3-scaled.jpg" alt="The Heritage of Passion - BTH Marine">
-            <div class="article-overlay"></div>
-            <span class="article-category">Spotlight</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">The Heritage of Passion — BTH Marine</h3>
-              <p class="article-excerpt">A seven-year-old receives a broken-down boat as a birthday gift. By eight, he'd rebuilt it. A family legacy was born.</p>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">October 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/wwhat-a-difference-dr-m-center/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/54469-1-scaled-e1762131188861-254x300.jpg" alt="What a Difference - Dr. M Center">
-            <div class="article-overlay"></div>
-            <span class="article-category">Spotlight</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">What a Difference — Dr. M Center</h3>
-              <p class="article-excerpt">Discover how Dr. M Center is making a difference in the Florida Keys community.</p>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">November 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <button class="view-all-btn" onclick="window.location.href='articles.html';">View All Spotlights</button>
-    </div>
-  </section>
-
-  <section id="community" class="section-light fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Community Highlights</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="community-grid">
-        <a href="https://keyslifemagazine.com/coral-shores-high-school-drama-club-presents-in-the-heights/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_1252-copy-scaled.jpg" alt="Coral Shores High School Drama Club Presents In the Heights">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Coral Shores High School Drama Club Presents In the Heights</h3>
-              <p class="article-excerpt">Vibrant rhythms and heartfelt stories as the Drama Club showcases talent, heart, and cultural pride.</p>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">February 2026</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/the-4-way-test-key-largo-rotary-club/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/487708434_992664763058214_123715252335958002_n-768x550.jpg" alt="The 4-Way Test - Key Largo Rotary Club">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">The 4-Way Test — Key Largo Rotary Club</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">February 2026</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/breeze-through-the-keys-motor-breeze/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_8435-1-scaled.jpeg" alt="Breeze Through the Keys - Motor Breeze">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Breeze Through the Keys — Motor Breeze</h3>
-              <p class="article-excerpt">A former yacht broker turned auto concierge recognized that Keys residents faced unnecessary hassle.</p>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">February 2026</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/14546-2bringing-it-into-focus-film-javier/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/JAVI-AMANDA-1-768x512.jpg" alt="Bringing It Into Focus - FilmJavier">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Bringing It Into Focus — FilmJavier</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">January 2026</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/blowtorching-boats-aquaphobix/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/thumbnail_IMG_4551-768x512.jpg" alt="Blowtorching Boats - Aquaphobix">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Blowtorching Boats — Aquaphobix</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">December 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/monty-pythons-edukational-show-presented-by-the-key-players/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/2025-12-08-19.10.57-300x169.jpg" alt="Monty Python's Edukational Show - The Key Players">
-            <div class="article-overlay"></div>
-            <span class="article-category">Community</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Monty Python's Edukational Show — The Key Players</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">December 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <button class="view-all-btn" onclick="window.location.href='articles.html';">View All Community Highlights</button>
-    </div>
-  </section>
-
-  <section id="history" class="section-dark fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">History of the Florida Keys</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="history-grid">
-        <a href="https://keyslifemagazine.com/alligator-reef-lighthouse/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/Alligator_Reef-Lighthouse-KLM.png" alt="The Story of Alligator Reef Lighthouse">
-            <div class="article-overlay"></div>
-            <span class="article-category">History</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">The Story of Alligator Reef Lighthouse</h3>
-              <p class="article-excerpt">Standing tall and weathered in the turquoise sea, this lighthouse represents maritime history and community resilience.</p>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">September 2025</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/mosquitos-to-the-rescue/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2024/10/EteOMCdP-scaled-1-300x172.jpg" alt="Mosquitos to the Rescue">
-            <div class="article-overlay"></div>
-            <span class="article-category">History</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Mosquitos to the Rescue</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">October 2024</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/keys-castle-was-a-treasure-trove-of-keys-history/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2023/06/Art-McKee-right-Mickey-Spillane-by-Irving-and-Jeane-Eyster-with-Matecumbe-Historic-Trust-300x239.jpg" alt="Keys Castle Was a Treasure Trove of Keys History">
-            <div class="article-overlay"></div>
-            <span class="article-category">History</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Keys Castle Was a Treasure Trove of Keys History</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">June 2023</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://keyslifemagazine.com/pirates-pineapples-history-of-elliott-key/" class="article-card">
-          <div class="article-image">
-            <img src="https://keyslifemagazine.com/wp-content/uploads/2022/12/DSC_0084_1-300x199.jpg" alt="Pirates & Pineapples - History of Elliott Key">
-            <div class="article-overlay"></div>
-            <span class="article-category">History</span>
-          </div>
-          <div class="article-content">
-            <div>
-              <h3 class="article-title">Pirates & Pineapples — History of Elliott Key</h3>
-            </div>
-            <div class="article-meta">
-              <span class="article-date">December 2022</span>
-              <span class="article-link">Read More <i class="fas fa-arrow-right"></i></span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <button class="view-all-btn" onclick="window.location.href='articles.html';">View All History</button>
-    </div>
-  </section>
-
-  <section id="publications" class="section-light fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Current Issues</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="publications-container">
-        <a href="https://keyslifemagazine.com/march-2026/" class="magazine-cover">
-          <img src="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png" alt="March 2026 Issue">
-        </a>
-        <a href="https://keyslifemagazine.com/february-issue-2026/" class="magazine-cover">
-          <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/KLM_FEB_2026-768x749.png" alt="February 2026 Issue">
-        </a>
-        <a href="https://keyslifemagazine.com/january-2026/" class="magazine-cover">
-          <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/KeysLifeJan_2026-768x762.png" alt="January 2026 Issue">
-        </a>
-      </div>
-
-      <button class="view-all-btn" onclick="window.location.href='https://keyslifemagazine.com/archives-past-issues/';">View Archives</button>
-    </div>
-  </section>
-
-  <section class="section-dark fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">26,000 Reasons to Advertise</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="stats-container">
-        <div class="stat-item">
-          <div class="stat-number" data-target="26000">0</div>
-          <div class="stat-label">Magazines Monthly</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="94">0</div>
-          <div class="stat-label">Rack Locations</div>
+    </section>
+
+    <!-- Current Issue Strip -->
+    <section class="current-issue">
+        <div class="current-issue-container">
+            <div class="current-issue-cover">
+                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png" alt="March 2026 Issue">
+            </div>
+            <div class="current-issue-text">
+                <h3>March 2026 Issue — Now Available</h3>
+                <p>Discover the latest stories from the Florida Keys community</p>
+            </div>
+            <a href="https://keyslifemagazine.com/march-2026/" class="current-issue-link">Read Online →</a>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="40000">0</div>
-          <div class="stat-label">Social Followers</div>
+    </section>
+
+    <!-- Spotlight Section -->
+    <section class="dark-section" id="spotlight">
+        <div class="section-container">
+            <h2 class="section-title">Keys Life Spotlight</h2>
+
+            <div class="spotlight-grid">
+                <div class="spotlight-featured">
+                    <a href="https://keyslifemagazine.com/simple-to-smart-innovative-technology-solutions/">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/51C8D913-518E-4B1B-ADC0-AB736F71BEF9_1_201_a-scaled.jpeg" alt="Simple to Smart">
+                            </div>
+                            <div class="card-body">
+                                <span class="card-category">Spotlight</span>
+                                <h3 class="card-title">Simple to Smart — Innovative Technology Solutions</h3>
+                                <p class="card-excerpt">Three kids growing up in the Florida Keys turned their childhood tinkering into a smart home business that's transforming how locals live.</p>
+                                <div class="card-footer">
+                                    <span class="card-date">March 2026</span>
+                                    <span class="card-read-more">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="spotlight-stacked">
+                    <a href="https://keyslifemagazine.com/the-octopus-marks-the-spot-mother-ocean/">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/IMG_2795_cover-scaled-e1769915985559.jpeg" alt="The Octopus Marks the Spot">
+                            </div>
+                            <div class="card-body">
+                                <span class="card-category">Spotlight</span>
+                                <h3 class="card-title">The Octopus Marks the Spot — Mother Ocean</h3>
+                                <p class="card-excerpt">In the Keys, it's the Giant Pink Octopus atop a local treasure trove of a store that marks the spot.</p>
+                                <div class="card-footer">
+                                    <span class="card-date">February 2026</span>
+                                    <span class="card-read-more">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://keyslifemagazine.com/changing-for-the-better-islamorada-medical-center/">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/DSC_5786-scaled.jpg" alt="Changing for the Better">
+                            </div>
+                            <div class="card-body">
+                                <span class="card-category">Spotlight</span>
+                                <h3 class="card-title">Changing for the Better — Islamorada Medical Center</h3>
+                                <p class="card-excerpt">Dr. Miguel Diaz-Miret rebuilds his medical practice with renewed purpose after life forced a different path.</p>
+                                <div class="card-footer">
+                                    <span class="card-date">January 2026</span>
+                                    <span class="card-read-more">Read More →</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="cards-row">
+                <a href="https://keyslifemagazine.com/catering-to-the-community-kaiyo-grill-sushi/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/774_a0Green012-scaled.jpg" alt="Kaiyo Grill & Sushi">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Spotlight</span>
+                            <h3 class="card-title">Catering to the Community — Kaiyo Grill & Sushi</h3>
+                            <p class="card-excerpt">Black-and-white photos on the walls tell the story of a fishing village finding its rhythm.</p>
+                            <div class="card-footer">
+                                <span class="card-date">December 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/the-heritage-of-passion-bth-marine/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/10/Inside3-scaled.jpg" alt="BTH Marine">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Spotlight</span>
+                            <h3 class="card-title">The Heritage of Passion — BTH Marine</h3>
+                            <p class="card-excerpt">A seven-year-old receives a broken-down boat as a birthday gift. By eight, he'd rebuilt it.</p>
+                            <div class="card-footer">
+                                <span class="card-date">October 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/wwhat-a-difference-dr-m-center/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/11/54469-1-scaled-e1762131188861-254x300.jpg" alt="Dr. M Center">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Spotlight</span>
+                            <h3 class="card-title">What a Difference — Dr. M Center</h3>
+                            <p class="card-excerpt">Discover how Dr. M Center is making a difference in the Florida Keys community.</p>
+                            <div class="card-footer">
+                                <span class="card-date">November 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="articles.html" class="view-all-btn">View All Spotlights</a>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="12">0</div>
-          <div class="stat-label">Years Publishing</div>
+    </section>
+
+    <!-- Community Highlights -->
+    <section id="community">
+        <div class="section-container">
+            <h2 class="section-title">Community Highlights</h2>
+
+            <div class="community-grid">
+                <a href="https://keyslifemagazine.com/coral-shores-high-school-drama-club-presents-in-the-heights/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_1252-copy-scaled.jpg" alt="Coral Shores Drama Club">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">Coral Shores High School Drama Club Presents In the Heights</h3>
+                            <p class="card-excerpt">Vibrant rhythms and heartfelt stories as the Drama Club showcases talent, heart, and cultural pride.</p>
+                            <div class="card-footer">
+                                <span class="card-date">March 2026</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/the-4-way-test-key-largo-rotary-club/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/487708434_992664763058214_123715252335958002_n-768x550.jpg" alt="Key Largo Rotary Club">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">The 4-Way Test — Key Largo Rotary Club</h3>
+                            <p class="card-excerpt">Key Largo Rotary Club upholds community service through the guiding 4-Way Test principles.</p>
+                            <div class="card-footer">
+                                <span class="card-date">February 2026</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/breeze-through-the-keys-motor-breeze/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/IMG_8435-1-scaled.jpeg" alt="Motor Breeze">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">Breeze Through the Keys — Motor Breeze</h3>
+                            <p class="card-excerpt">A former yacht broker turned auto concierge recognized that Keys residents faced unnecessary hassle.</p>
+                            <div class="card-footer">
+                                <span class="card-date">February 2026</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/14546-2bringing-it-into-focus-film-javier/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/01/JAVI-AMANDA-1-768x512.jpg" alt="FilmJavier">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">Bringing It Into Focus — FilmJavier</h3>
+                            <p class="card-excerpt">FilmJavier brings creative storytelling and visual artistry to the Florida Keys.</p>
+                            <div class="card-footer">
+                                <span class="card-date">January 2026</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/blowtorching-boats-aquaphobix/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/thumbnail_IMG_4551-768x512.jpg" alt="Aquaphobix">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">Blowtorching Boats — Aquaphobix</h3>
+                            <p class="card-excerpt">Aquaphobix brings a unique approach to marine maintenance in the Florida Keys.</p>
+                            <div class="card-footer">
+                                <span class="card-date">December 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/monty-pythons-edukational-show-presented-by-the-key-players/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/2025-12-08-19.10.57-300x169.jpg" alt="The Key Players">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Community</span>
+                            <h3 class="card-title">Monty Python's Edukational Show — The Key Players</h3>
+                            <p class="card-excerpt">The Key Players bring Monty Python's irreverent humor to the Florida Keys stage.</p>
+                            <div class="card-footer">
+                                <span class="card-date">December 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="articles.html#community" class="view-all-btn">View All Community</a>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="90">0</div>
-          <div class="stat-label">% Retention</div>
+    </section>
+
+    <!-- History Section -->
+    <section class="dark-section" id="history">
+        <div class="section-container">
+            <h2 class="section-title">History of the Florida Keys</h2>
+
+            <div class="history-grid">
+                <a href="https://keyslifemagazine.com/alligator-reef-lighthouse/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/09/Alligator_Reef-Lighthouse-KLM.png" alt="Alligator Reef Lighthouse">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">History</span>
+                            <h3 class="card-title">The Story of Alligator Reef Lighthouse</h3>
+                            <p class="card-excerpt">Standing tall and weathered in the turquoise sea, a piece of maritime history and community resilience.</p>
+                            <div class="card-footer">
+                                <span class="card-date">September 2025</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/mosquitos-to-the-rescue/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2024/10/EteOMCdP-scaled-1-300x172.jpg" alt="Mosquitos to the Rescue">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">History</span>
+                            <h3 class="card-title">Mosquitos to the Rescue</h3>
+                            <p class="card-excerpt">An unlikely hero in the history of the Florida Keys.</p>
+                            <div class="card-footer">
+                                <span class="card-date">October 2024</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/keys-castle-was-a-treasure-trove-of-keys-history/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2023/06/Art-McKee-right-Mickey-Spillane-by-Irving-and-Jeane-Eyster-with-Matecumbe-Historic-Trust-300x239.jpg" alt="Keys Castle">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">History</span>
+                            <h3 class="card-title">Keys Castle Was a Treasure Trove of Keys History</h3>
+                            <p class="card-excerpt">Art McKee's treasure museum was once one of the most fascinating attractions in the Keys.</p>
+                            <div class="card-footer">
+                                <span class="card-date">June 2023</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://keyslifemagazine.com/pirates-pineapples-history-of-elliott-key/">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2022/12/DSC_0084_1-300x199.jpg" alt="Elliott Key">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">History</span>
+                            <h3 class="card-title">Pirates & Pineapples — History of Elliott Key</h3>
+                            <p class="card-excerpt">The colorful history of Elliott Key, from pirates and wreckers to pineapple farmers.</p>
+                            <div class="card-footer">
+                                <span class="card-date">December 2022</span>
+                                <span class="card-read-more">Read More →</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="articles.html#history" class="view-all-btn">View All History</a>
         </div>
-      </div>
+    </section>
 
-      <div class="about-content">
-        <h3>Keys Life Magazine is the ONLY publication that mails directly to every mailbox from Ocean Reef to Long Key. With 26,000 monthly subscribers and unmatched community trust, we deliver your message to the right audience at the right time.</h3>
-        <button class="cta-primary" style="margin-top: 2rem;" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">Advertise With Us</button>
-      </div>
-    </div>
-  </section>
+    <!-- Current Issues -->
+    <section id="publications">
+        <div class="section-container">
+            <h2 class="section-title">Current Issues</h2>
 
-  <section id="services" class="section-light fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Our Services</h2>
-        <div class="section-line"></div>
-      </div>
+            <div class="issues-grid">
+                <div class="issue-item">
+                    <a href="https://keyslifemagazine.com/march-2026/">
+                        <div class="issue-cover">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/03/Screen-Shot-2026-03-01-at-7.35.53-AM-768x695.png" alt="March 2026 Issue">
+                        </div>
+                    </a>
+                    <div class="issue-month">March 2026</div>
+                </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-newspaper"></i></div>
-          <h3>Magazine Advertising</h3>
-          <p>Reach 26,000 homes monthly with premium print advertising placements.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
+                <div class="issue-item">
+                    <a href="https://keyslifemagazine.com/february-issue-2026/">
+                        <div class="issue-cover">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2026/02/KLM_FEB_2026-768x749.png" alt="February 2026 Issue">
+                        </div>
+                    </a>
+                    <div class="issue-month">February 2026</div>
+                </div>
+
+                <div class="issue-item">
+                    <a href="https://keyslifemagazine.com/january-2026/">
+                        <div class="issue-cover">
+                            <img src="https://keyslifemagazine.com/wp-content/uploads/2025/12/KeysLifeJan_2026-768x762.png" alt="January 2026 Issue">
+                        </div>
+                    </a>
+                    <div class="issue-month">January 2026</div>
+                </div>
+            </div>
+
+            <a href="https://keyslifemagazine.com/archives-past-issues/" class="view-all-btn">View Archives</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-content">
+            <h2 class="stats-heading">26,000 Reasons to Advertise With Us</h2>
+            <p class="stats-text">Keys Life Magazine is the only publication that mails to every mailbox in the Florida Keys. Reach your entire target market with guaranteed physical delivery.</p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number stats-font">26,000+</div>
+                    <div class="stat-label">Magazines Monthly</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number stats-font">94</div>
+                    <div class="stat-label">Rack Locations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number stats-font">40,000+</div>
+                    <div class="stat-label">Social Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number stats-font">12+</div>
+                    <div class="stat-label">Years Strong</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number stats-font">90%</div>
+                    <div class="stat-label">Client Retention</div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="view-all-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise With Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-container">
+            <h2 class="section-title">Our Services</h2>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Magazine Advertising</h3>
+                    <p>Print ads in 26,000+ monthly magazines reaching the entire Florida Keys</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Website Design</h3>
+                    <p>Custom websites starting at $600 with SEO and mobile responsive design</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>SEO Management</h3>
+                    <p>Boost your online visibility with professional SEO from $780/month</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <h3>Social Media Management</h3>
+                    <p>Content packages and management starting at $400/month with monthly reporting</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Reputation Management</h3>
+                    <p>Protect and enhance your online reputation at $325/month</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3>Print & Design</h3>
+                    <p>Professional design services for print and digital materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="dark-section">
+        <div class="section-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">What areas does Keys Life Magazine cover?</button>
+                    <div class="faq-answer">
+                        We distribute 26,000 magazines monthly to every home, business, and PO box between Ocean Reef and Long Key, with 94 rack locations from Florida City to Mile Marker 38.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How often is the magazine published?</button>
+                    <div class="faq-answer">
+                        Keys Life Magazine is published monthly and delivered via direct mail and rack distribution to ensure you reach your audience consistently throughout the year.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">How can I advertise in Keys Life Magazine?</button>
+                    <div class="faq-answer">
+                        Contact us at 305-453-6674 or sales@keyslifemagazine.com. We offer print advertising, digital marketing, SEO, social media management, and more to fit your budget and goals.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer digital marketing services?</button>
+                    <div class="faq-answer">
+                        Yes. We provide website design starting at $600, SEO management from $780/month, social media management from $400/month, and reputation management at $325/month.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What makes direct mail advertising effective?</button>
+                    <div class="faq-answer">
+                        Direct mail reaches 100% of households in our coverage area. Unlike digital ads that can be skipped or blocked, physical magazines are picked up and read by entire households.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Can I see past issues of the magazine?</button>
+                    <div class="faq-answer">
+                        Yes, visit our archives to browse past issues and see the range of local businesses and stories we've featured over the years.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer website design services?</button>
+                    <div class="faq-answer">
+                        Yes. Our Foundations Website Build starts at $600 for a 5-page site with mobile responsive design, SEO optimization, and Google Analytics integration.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">What social media packages do you offer?</button>
+                    <div class="faq-answer">
+                        We offer content packages starting at $260 for 15 posts, and full social media management starting at $400/month with dedicated hours, platform management, and monthly reporting.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Get in Touch</h2>
+
+            <div class="contact-container">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-block">
+                        <i class="fas fa-phone"></i>
+                        <div class="info-block-text">
+                            <h4>Phone</h4>
+                            <p>305-453-6674</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info-block-text">
+                            <h4>Email</h4>
+                            <p>sales@keyslifemagazine.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-block-text">
+                            <h4>Address</h4>
+                            <p>90773 Old Highway, Unit #3<br>Tavernier, FL 33070</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-block-text">
+                            <h4>Hours</h4>
+                            <p>Monday - Friday<br>10:00 AM - 5:30 PM</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="margin-bottom: 1rem;">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://facebook.com/KeysLifeMagazine/" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://instagram.com/keyslifemagazine/" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine">
+                </div>
+                <p>The Florida Keys' premier magazine reaching 26,000+ homes monthly with direct mail advertising and digital marketing services.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#spotlight">Spotlight</a>
+                <a href="#community">Community</a>
+                <a href="#history">History</a>
+                <a href="#publications">Publications</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Content</h4>
+                <a href="articles.html#spotlight">All Spotlights</a>
+                <a href="articles.html#community">Community Stories</a>
+                <a href="articles.html#history">History Articles</a>
+                <a href="https://keyslifemagazine.com/archives-past-issues/">Past Issues</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#services">Magazine Advertising</a>
+                <a href="#services">Website Design</a>
+                <a href="#services">SEO Management</a>
+                <a href="#services">Social Media</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <address>
+                    <p>90773 Old Highway, Unit #3<br>Tavernier, FL 33070</p>
+                    <p><a href="tel:305-453-6674">305-453-6674</a></p>
+                    <p><a href="mailto:sales@keyslifemagazine.com">sales@keyslifemagazine.com</a></p>
+                </address>
+                <div class="footer-social">
+                    <a href="https://facebook.com/KeysLifeMagazine/" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/keyslifemagazine/" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-globe"></i></div>
-          <h3>Website Design</h3>
-          <p>Modern, responsive web design tailored for Keys businesses.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Keys Life Magazine. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-search"></i></div>
-          <h3>SEO Services</h3>
-          <p>Improve your online visibility and drive organic traffic.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
-        </div>
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Keys Life Magazine",
+        "description": "Florida Keys Direct Mail Advertising & Digital Marketing",
+        "url": "https://keyslifemagazine.com",
+        "telephone": "+1-305-453-6674",
+        "email": "sales@keyslifemagazine.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "90773 Old Highway, Unit #3",
+            "addressLocality": "Tavernier",
+            "addressRegion": "FL",
+            "postalCode": "33070",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "25.0114",
+            "longitude": "-80.5178"
+        },
+        "image": "https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png",
+        "sameAs": [
+            "https://facebook.com/KeysLifeMagazine/",
+            "https://instagram.com/keyslifemagazine/"
+        ],
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "17:30"
+            }
+        ]
+    }
+    </script>
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
-          <h3>Social Media Marketing</h3>
-          <p>Strategic social media management and content creation.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
-        </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What areas does Keys Life Magazine cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We distribute 26,000 magazines monthly to every home, business, and PO box between Ocean Reef and Long Key, with 94 rack locations from Florida City to Mile Marker 38."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often is the magazine published?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Keys Life Magazine is published monthly and delivered via direct mail and rack distribution."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I advertise in Keys Life Magazine?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contact us at 305-453-6674 or sales@keyslifemagazine.com. We offer print advertising, digital marketing, SEO, social media management, and more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer digital marketing services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. We provide website design starting at $600, SEO management from $780/month, social media management from $400/month, and reputation management at $325/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes direct mail advertising effective?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Direct mail reaches 100% of households in our coverage area. Unlike digital ads that can be skipped or blocked, physical magazines are picked up and read by entire households."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I see past issues of the magazine?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, visit our archives to browse past issues and see the range of local businesses and stories we've featured."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer website design services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Our Foundations Website Build starts at $600 for a 5-page site with mobile responsive design, SEO optimization, and Google Analytics integration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What social media packages do you offer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer content packages starting at $260 for 15 posts, and full social media management starting at $400/month with dedicated hours, platform management, and monthly reporting."
+                }
+            }
+        ]
+    }
+    </script>
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-star"></i></div>
-          <h3>Reputation Management</h3>
-          <p>Build and maintain your online reputation and reviews.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
-        </div>
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-print"></i></div>
-          <h3>Print & Design</h3>
-          <p>Professional print design and production services.</p>
-          <a href="https://keyslifemagazine.com/" class="service-link">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        // Particle canvas animation
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
 
-  <section class="section-dark fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What is Keys Life Magazine's circulation reach?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            Keys Life Magazine reaches 26,000 homes monthly across the Florida Keys from Ocean Reef to Long Key. We are the only direct mail publication that delivers to every mailbox in this region.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How much does advertising in Keys Life Magazine cost?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            Advertising rates vary based on ad size and placement. We offer flexible options from small classified ads to full-page features. Contact our sales team at 305-453-6674 for detailed pricing and package information.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What are the advertising deadlines?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            Content deadlines typically fall 3-4 weeks before the publication date. We recommend submitting materials early to ensure quality production. Contact our team for specific deadline dates for your desired issue.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Can I advertise online as well as in print?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            Yes! We offer integrated advertising solutions combining print, digital, social media, and website marketing. Our team can create a comprehensive advertising strategy tailored to your business goals.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How do I submit a story or article?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            We welcome story submissions from Keys community members. Please contact our editorial team at sales@keyslifemagazine.com with your story idea, photos, and relevant details. Our team will review and provide feedback.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Is there an online version of Keys Life Magazine?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            Yes, current and past issues are available online. Visit our website to read the latest issue or browse our archives. Digital subscriptions are also available for those who prefer online reading.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What payment methods do you accept?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            We accept all major credit cards, bank transfers, and checks. For advertising invoices, we offer flexible payment terms and can set up recurring billing for regular clients.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How can I track my advertising results?</span>
-            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
-          </div>
-          <div class="faq-answer">
-            We recommend using unique coupon codes or dedicated phone numbers in your ads to track response. We can also help integrate tracking parameters in digital campaigns for comprehensive ROI measurement.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section-light fade-in">
-    <div class="section-container">
-      <div class="section-header">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="contact-container">
-        <form class="contact-form" onsubmit="handleFormSubmit(event)">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <button type="submit" class="contact-submit">Send Message</button>
-        </form>
-
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-
-          <div class="contact-item">
-            <strong>Phone</strong><br>
-            <a href="tel:305-453-6674">305-453-6674</a>
-          </div>
-
-          <div class="contact-item">
-            <strong>Email</strong><br>
-            <a href="mailto:sales@keyslifemagazine.com">sales@keyslifemagazine.com</a>
-          </div>
-
-          <div class="contact-item">
-            <strong>Address</strong><br>
-            <address>
-              90773 Old Highway<br>
-              Unit #3<br>
-              Tavernier, FL 33070
-            </address>
-          </div>
-
-          <div class="contact-hours">
-            <strong>Business Hours</strong><br>
-            Monday - Friday: 10:00 AM - 5:30 PM EST
-          </div>
-
-          <div class="contact-social">
-            <a href="https://facebook.com/KeysLifeMagazine/" class="social-icon" title="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com/keyslifemagazine/" class="social-icon" title="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="footer-logo">Keys Life Magazine</div>
-        <p style="opacity: 0.8; font-size: 0.9rem;">The Florida Keys' only direct mail magazine reaching 26,000 homes monthly from Ocean Reef to Long Key.</p>
-      </div>
-
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#spotlight">Spotlight</a>
-        <a href="#community">Community</a>
-        <a href="#history">History</a>
-        <a href="#publications">Publications</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>Content</h4>
-        <a href="#spotlight">Spotlight Stories</a>
-        <a href="#community">Community Highlights</a>
-        <a href="#history">Keys History</a>
-        <a href="https://keyslifemagazine.com/archives-past-issues/">Past Issues</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>Services</h4>
-        <a href="https://keyslifemagazine.com/">Magazine Advertising</a>
-        <a href="https://keyslifemagazine.com/">Web Design</a>
-        <a href="https://keyslifemagazine.com/">Social Media</a>
-        <a href="https://keyslifemagazine.com/">SEO Services</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <address>
-          90773 Old Highway<br>
-          Unit #3<br>
-          Tavernier, FL 33070<br><br>
-          <a href="tel:305-453-6674" style="color: var(--warm-coral); text-decoration: none;">305-453-6674</a><br>
-          <a href="mailto:sales@keyslifemagazine.com" style="color: var(--warm-coral); text-decoration: none;">sales@keyslifemagazine.com</a>
-        </address>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Keys Life Magazine. All rights reserved. The Florida Keys' Premier Direct Mail Publication.</p>
-    </div>
-  </footer>
-
-  <script>
-    function initParticles() {
-      const canvas = document.getElementById('particleCanvas');
-      if (!canvas) return;
-
-      const ctx = canvas.getContext('2d');
-      const particles = [];
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      class Particle {
-        constructor() {
-          this.x = Math.random() * canvas.width;
-          this.y = canvas.height + 10;
-          this.size = Math.random() * 2 + 1;
-          this.speedY = Math.random() * 0.5 + 0.2;
-          this.opacity = Math.random() * 0.5 + 0.2;
-        }
-
-        update() {
-          this.y -= this.speedY;
-          this.opacity -= 0.001;
-        }
-
-        draw() {
-          ctx.fillStyle = `rgba(240, 160, 80, ${this.opacity})`;
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        if (Math.random() < 0.02) {
-          particles.push(new Particle());
-        }
-
-        for (let i = particles.length - 1; i >= 0; i--) {
-          particles[i].update();
-          particles[i].draw();
-
-          if (particles[i].opacity <= 0 || particles[i].y < 0) {
-            particles.splice(i, 1);
-          }
-        }
-
-        requestAnimationFrame(animate);
-      }
-
-      animate();
-
-      window.addEventListener('resize', () => {
         canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      });
-    }
+        canvas.height = window.innerHeight * 0.7;
 
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
+        const particles = [];
 
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + 10;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = -Math.random() * 0.5 - 0.3;
+                this.opacity = Math.random() * 0.3 + 0.1;
+            }
 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
+            update() {
+                this.y += this.speedY;
+                this.opacity -= 0.001;
+            }
 
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-          observer.unobserve(entry.target);
+            draw() {
+                ctx.fillStyle = `rgba(240, 160, 80, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-      });
-    }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(element => {
-      observer.observe(element);
-    });
+        function createParticles() {
+            if (particles.length < 50) {
+                particles.push(new Particle());
+            }
+        }
 
-    function animateCounters() {
-      const counters = document.querySelectorAll('.stat-number');
-      const observerCounter = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const target = parseInt(entry.target.getAttribute('data-target'));
-            let current = 0;
-            const increment = target / 50;
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            const counter = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                current = target;
-                clearInterval(counter);
-              }
-              entry.target.textContent = Math.floor(current).toLocaleString();
-            }, 30);
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw();
 
-            observerCounter.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+                if (particles[i].opacity <= 0) {
+                    particles.splice(i, 1);
+                }
+            }
 
-      counters.forEach(counter => observerCounter.observe(counter));
-    }
+            createParticles();
+            requestAnimationFrame(animateParticles);
+        }
 
-    window.addEventListener('scroll', animateCounters, { once: true });
+        animateParticles();
 
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const item = question.parentElement;
-        const isActive = item.classList.contains('active');
-
-        document.querySelectorAll('.faq-item').forEach(faq => {
-          faq.classList.remove('active');
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
         });
 
-        if (!isActive) {
-          item.classList.add('active');
+        // Contact form (basic validation)
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will be in touch shortly.');
+                contactForm.reset();
+            });
         }
-      });
-    });
-
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      const form = event.target;
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const message = document.getElementById('message').value;
-
-      const mailtoLink = `mailto:sales@keyslifemagazine.com?subject=New Contact Form Submission from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`)}`;
-
-      window.location.href = mailtoLink;
-    }
-
-    document.addEventListener('DOMContentLoaded', initParticles);
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Keys Life Magazine",
-    "image": "https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png",
-    "description": "The Florida Keys' only direct mail magazine reaching 26,000 homes monthly from Ocean Reef to Long Key.",
-    "url": "https://keyslifemagazine.com/",
-    "telephone": "305-453-6674",
-    "email": "sales@keyslifemagazine.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "90773 Old Highway, Unit #3",
-      "addressLocality": "Tavernier",
-      "addressRegion": "FL",
-      "postalCode": "33070",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "10:00",
-      "closes": "17:30"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "25.0114",
-      "longitude": "-80.5178"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "156"
-    },
-    "sameAs": [
-      "https://facebook.com/KeysLifeMagazine/",
-      "https://instagram.com/keyslifemagazine/"
-    ],
-    "priceRange": "$$",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Advertising Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "Magazine Advertising"
-        },
-        {
-          "@type": "Offer",
-          "name": "Digital Marketing"
-        },
-        {
-          "@type": "Offer",
-          "name": "Website Design"
-        }
-      ]
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Keys Life Magazine's circulation reach?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Keys Life Magazine reaches 26,000 homes monthly across the Florida Keys from Ocean Reef to Long Key. We are the only direct mail publication that delivers to every mailbox in this region."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does advertising in Keys Life Magazine cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Advertising rates vary based on ad size and placement. We offer flexible options from small classified ads to full-page features. Contact our sales team at 305-453-6674 for detailed pricing and package information."
-        }
-      }
-    ]
-  }
-  </script>
+    </script>
 </body>
 </html>
