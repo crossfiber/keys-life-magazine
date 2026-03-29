@@ -77,7 +77,7 @@
 
         /* ── Hero ── */
         .hero {
-            background: url('services-hero.jpg') center 40%/cover no-repeat;
+            background: url('services-hero.jpg') 70% 65%/cover no-repeat;
             color: var(--white);
             padding: 6rem 2rem 5rem;
             text-align: center;
@@ -478,6 +478,68 @@
         }
         .print-item:hover i { color: var(--golden); }
         .print-item p { font-size: 0.85rem; font-weight: 500; color: var(--text-light); }
+
+        /* ── Contact Form ── */
+        .contact-grid {
+            display: grid; grid-template-columns: 1.5fr 1fr;
+            gap: 3rem; align-items: start;
+        }
+        .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group label {
+            font-weight: 600; margin-bottom: 0.4rem;
+            color: var(--text-light); font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; color: var(--white);
+            font-family: 'Inter', sans-serif; font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.3);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none; border-color: var(--coral);
+            box-shadow: 0 0 0 3px rgba(232,114,92,0.15);
+        }
+        .form-group select option { background: var(--dark-navy); color: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-submit {
+            background: var(--coral); color: var(--white);
+            padding: 0.85rem 2rem; border: none; border-radius: 8px;
+            font-weight: 600; cursor: pointer; font-size: 0.95rem;
+            transition: all 0.3s ease; align-self: flex-start;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-submit:hover {
+            background: #d45a47; transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--coral-glow);
+        }
+        .contact-info-col { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 0.5rem; }
+        .contact-block { display: flex; gap: 1rem; align-items: flex-start; }
+        .contact-icon {
+            width: 44px; height: 44px; border-radius: 10px;
+            background: rgba(232,114,92,0.15);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-icon i { color: var(--coral); font-size: 1.1rem; }
+        .contact-block h4 { color: var(--white); font-size: 0.95rem; margin-bottom: 0.2rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .contact-block p { color: rgba(240,230,223,0.7); font-size: 0.9rem; line-height: 1.5; }
+
+        @media (max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
 
         /* ── CTA Banner ── */
         .cta-banner {
@@ -1057,6 +1119,88 @@
 
             <div style="text-align:center;margin-top:2rem;" class="fade-in">
                 <a href="index.html#contact" class="cta-link">Request a Quote <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get In Touch -->
+    <section id="contact" class="dark-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get In Touch</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">Ready to grow? Tell us about your business and we'll put together a custom plan.</p>
+            </div>
+
+            <div class="contact-grid fade-in">
+                <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! We will be in touch shortly.');this.reset();">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="s-name">Name</label>
+                            <input type="text" id="s-name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="s-email">Email</label>
+                            <input type="email" id="s-email" name="email" required placeholder="you@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="s-phone">Phone</label>
+                            <input type="tel" id="s-phone" name="phone" placeholder="305-000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label for="s-interest">Interested In</label>
+                            <select id="s-interest" name="interest">
+                                <option value="">Select a service...</option>
+                                <option value="bundle">Growth Plan Bundle</option>
+                                <option value="magazine">Magazine Advertising</option>
+                                <option value="web">Website Design</option>
+                                <option value="seo">SEO Management</option>
+                                <option value="social">Social Media</option>
+                                <option value="reputation">Reputation Management</option>
+                                <option value="print">Print & Design</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="s-message">Message</label>
+                        <textarea id="s-message" name="message" rows="4" placeholder="Tell us about your business and goals..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message <i class="fas fa-paper-plane" style="margin-left:6px;"></i></button>
+                </form>
+
+                <div class="contact-info-col">
+                    <div class="contact-block">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:3054536674" style="color:var(--golden);">305-453-6674</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-block">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:sales@keyslifemagazine.com" style="color:var(--golden);">sales@keyslifemagazine.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-block">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>90773 Old Highway, Unit #3<br>Tavernier, FL 33070</p>
+                        </div>
+                    </div>
+                    <div class="contact-block">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Monday – Friday<br>10:00 AM – 5:30 PM</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
