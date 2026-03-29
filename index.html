@@ -1106,13 +1106,13 @@
                 <li><a href="#community">Community</a></li>
                 <li><a href="#history">History</a></li>
                 <li><a href="#publications">Publications</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
             <div class="nav-right">
                 <div class="nav-phone">305-453-6674</div>
-                <button class="btn-advertise" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise</button>
+                <button class="btn-advertise" onclick="window.location.href='services.html'">Advertise</button>
             </div>
 
             <button class="hamburger" id="hamburger">
@@ -1130,7 +1130,7 @@
             <h1>The Florida Keys' Premier Magazine</h1>
             <p class="hero-subtitle">Reaching 26,000 homes monthly from Ocean Reef to Long Key</p>
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise With Us</button>
+                <button class="btn-primary" onclick="window.location.href='services.html'">Advertise With Us</button>
                 <a href="#publications" class="btn-secondary">Read Current Issue</a>
             </div>
         </div>
@@ -1529,7 +1529,7 @@
             </div>
 
             <div style="text-align: center;">
-                <button class="view-all-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Advertise With Us</button>
+                <button class="view-all-btn" onclick="window.location.href='services.html'">Advertise With Us</button>
             </div>
         </div>
     </section>
@@ -1538,55 +1538,54 @@
     <section id="services">
         <div class="section-container">
             <h2 class="section-title">Our Services</h2>
+            <p style="text-align:center;max-width:700px;margin:0 auto 3rem;color:#666;font-size:1.05rem;">From magazine advertising to full-service digital marketing, we help Florida Keys businesses grow.</p>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
+                <a href="services.html#magazine" class="service-card">
+                    <div class="service-icon"><i class="fas fa-newspaper"></i></div>
                     <h3>Magazine Advertising</h3>
-                    <p>Print ads in 26,000+ monthly magazines reaching the entire Florida Keys</p>
-                </div>
+                    <p>26,000+ monthly magazines reaching every mailbox in the Florida Keys</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">Contact for Rates <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                <a href="services.html#web-design" class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>Website Design</h3>
-                    <p>Custom websites starting at $600 with SEO and mobile responsive design</p>
-                </div>
+                    <p>Custom responsive websites with SEO, analytics, and managed hosting</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">From $600 <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+                <a href="services.html#seo" class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>SEO Management</h3>
-                    <p>Boost your online visibility with professional SEO from $780/month</p>
-                </div>
+                    <p>Keyword research, backlink building, GMB optimization, and monthly reporting</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">From $780/mo <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-share-nodes"></i>
-                    </div>
-                    <h3>Social Media Management</h3>
-                    <p>Content packages and management starting at $400/month with monthly reporting</p>
-                </div>
+                <a href="services.html#social" class="service-card">
+                    <div class="service-icon"><i class="fas fa-share-nodes"></i></div>
+                    <h3>Social Media</h3>
+                    <p>Content creation, scheduling, engagement, and performance reporting</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">From $400/mo <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+                <a href="services.html#reputation" class="service-card">
+                    <div class="service-icon"><i class="fas fa-star"></i></div>
                     <h3>Reputation Management</h3>
-                    <p>Protect and enhance your online reputation at $325/month</p>
-                </div>
+                    <p>Review solicitation, response management, and conflict de-escalation</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">$325/mo <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
+                <a href="services.html#print" class="service-card">
+                    <div class="service-icon"><i class="fas fa-print"></i></div>
                     <h3>Print & Design</h3>
-                    <p>Professional design services for print and digital materials</p>
-                </div>
+                    <p>Business cards, brochures, banners, menus, logos, and branded apparel</p>
+                    <span style="display:block;margin-top:auto;padding-top:1rem;color:var(--coral);font-weight:600;font-size:0.9rem;">View Options <i class="fas fa-arrow-right" style="font-size:0.8rem;margin-left:4px;"></i></span>
+                </a>
+            </div>
+
+            <div style="text-align:center;margin-top:2.5rem;">
+                <a href="services.html" class="view-all-btn">View All Packages & Pricing</a>
             </div>
         </div>
     </section>
@@ -1766,10 +1765,10 @@
 
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#services">Magazine Advertising</a>
-                <a href="#services">Website Design</a>
-                <a href="#services">SEO Management</a>
-                <a href="#services">Social Media</a>
+                <a href="services.html#magazine">Magazine Advertising</a>
+                <a href="services.html#web-design">Website Design</a>
+                <a href="services.html#seo">SEO Management</a>
+                <a href="services.html#social">Social Media</a>
             </div>
 
             <div class="footer-section">
