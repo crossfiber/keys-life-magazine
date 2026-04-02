@@ -133,6 +133,8 @@
             text-align: center; padding: 0.9rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; width: 100%;
         }
         body.menu-open { overflow: hidden; }
+        body.menu-open nav { z-index: 40 !important; }
+        body.menu-open .advertise-btn { visibility: hidden; }
 
         /* ── Hero ── */
         .hero {
@@ -1236,7 +1238,11 @@
                     <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/logo-LatitudeYacht-Small.jpg" alt="Latitude Yacht logo" loading="lazy"><div class="carousel-card-body"><h4>Latitude Yacht</h4><span>Logo Design</span></div></div>
                     <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/logo-IslandArms-Small.jpg" alt="Island Arms logo" loading="lazy"><div class="carousel-card-body"><h4>Island Arms</h4><span>Logo Design</span></div></div>
                     <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/logo-ZipOh-Small.jpg" alt="Zip Oh logo" loading="lazy"><div class="carousel-card-body"><h4>Zip Oh</h4><span>Logo Design</span></div></div>
-                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/logo-BANNER-Small.jpg" alt="Banner logo" loading="lazy"><div class="carousel-card-body"><h4>Banner</h4><span>Logo Design</span></div></div>
+                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/logo-BANNER-Small.jpg" alt="Keys Affordable Fishing logo" loading="lazy"><div class="carousel-card-body"><h4>Keys Affordable Fishing</h4><span>Logo Design</span></div></div>
+                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/fishinrags1-Small.png" alt="Fishin Rags logo 1" loading="lazy"><div class="carousel-card-body"><h4>Fishin' Rags</h4><span>Logo Design</span></div></div>
+                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/fishinrags2-Small.png" alt="Fishin Rags logo 2" loading="lazy"><div class="carousel-card-body"><h4>Fishin' Rags Alt</h4><span>Logo Design</span></div></div>
+                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/fishinrags3-Small-768x211.png" alt="Fishin Rags logo 3" loading="lazy"><div class="carousel-card-body"><h4>Fishin' Rags Wide</h4><span>Logo Design</span></div></div>
+                    <div class="carousel-card" data-cat="logos"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/Screen-Shot-2021-12-10-at-11.46.27-AM-Small.png" alt="Keys Air Force logo" loading="lazy"><div class="carousel-card-body"><h4>Keys Air Force</h4><span>Logo Design</span></div></div>
                     <!-- Business Cards -->
                     <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/bcard-CMG.jpg" alt="CMG business card" loading="lazy"><div class="carousel-card-body"><h4>CMG</h4><span>Business Card</span></div></div>
                     <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/bcard-islandAir.jpg" alt="Island Air business card" loading="lazy"><div class="carousel-card-body"><h4>Island Air</h4><span>Business Card</span></div></div>
@@ -1244,6 +1250,7 @@
                     <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/bcard-KAF.jpg" alt="KAF business card" loading="lazy"><div class="carousel-card-body"><h4>KAF</h4><span>Business Card</span></div></div>
                     <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/bcard-SolarPowered.jpg" alt="Solar Powered business card" loading="lazy"><div class="carousel-card-body"><h4>Solar Powered</h4><span>Business Card</span></div></div>
                     <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/bcard-zipOh.jpg" alt="Zip Oh business card" loading="lazy"><div class="carousel-card-body"><h4>Zip Oh</h4><span>Business Card</span></div></div>
+                    <div class="carousel-card" data-cat="cards"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/BANNER-BusinessCards-scaled.jpg" alt="Business Cards showcase" loading="lazy"><div class="carousel-card-body"><h4>Business Cards Showcase</h4><span>Business Card</span></div></div>
                     <!-- Flyers -->
                     <div class="carousel-card" data-cat="flyers"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/postCard-bettyPheifer-Small.jpg" alt="Betty Pfeifer flyer" loading="lazy"><div class="carousel-card-body"><h4>Betty Pfeifer</h4><span>Flyer Design</span></div></div>
                     <div class="carousel-card" data-cat="flyers"><img src="https://keyslifemagazine.com/wp-content/uploads/2021/12/postCard-islamoradaPools-Small.jpg" alt="Islamorada Pools flyer" loading="lazy"><div class="carousel-card-body"><h4>Islamorada Pools</h4><span>Flyer Design</span></div></div>
@@ -1620,40 +1627,64 @@
                 });
             });
 
-            // Touch/swipe support
+            // Touch/swipe support with visual drag feedback
+            let dragOffset = 0;
+            function getCurrentTranslate() {
+                const total = visibleCards.length;
+                const perPage = getVisibleCount();
+                return pos * perPage * getCardWidth();
+            }
+
             track.addEventListener('touchstart', (e) => {
                 isDragging = true;
                 startX = e.touches[0].clientX;
+                dragOffset = 0;
+                track.style.transition = 'none';
             }, { passive: true });
             track.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
+                const currentX = e.touches[0].clientX;
+                dragOffset = currentX - startX;
+                const base = getCurrentTranslate();
+                track.style.transform = 'translateX(' + (-base + dragOffset) + 'px)';
             }, { passive: true });
             track.addEventListener('touchend', (e) => {
                 if (!isDragging) return;
                 isDragging = false;
+                track.style.transition = 'transform 0.4s cubic-bezier(0.25,0.1,0.25,1)';
                 const diff = startX - e.changedTouches[0].clientX;
                 if (Math.abs(diff) > 50) {
                     if (diff > 0) { pos++; } else { pos--; }
-                    slide();
                 }
+                slide();
             });
 
-            // Mouse drag
+            // Mouse drag with visual feedback
             track.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 startX = e.clientX;
+                dragOffset = 0;
                 track.style.cursor = 'grabbing';
+                track.style.transition = 'none';
+                e.preventDefault();
             });
-            document.addEventListener('mousemove', (e) => { if (!isDragging) return; });
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                const currentX = e.clientX;
+                dragOffset = currentX - startX;
+                const base = getCurrentTranslate();
+                track.style.transform = 'translateX(' + (-base + dragOffset) + 'px)';
+            });
             document.addEventListener('mouseup', (e) => {
                 if (!isDragging) return;
                 isDragging = false;
                 track.style.cursor = 'grab';
+                track.style.transition = 'transform 0.4s cubic-bezier(0.25,0.1,0.25,1)';
                 const diff = startX - e.clientX;
                 if (Math.abs(diff) > 50) {
                     if (diff > 0) { pos++; } else { pos--; }
-                    slide();
                 }
+                slide();
             });
 
             updateDots();
