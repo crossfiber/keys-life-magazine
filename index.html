@@ -228,22 +228,27 @@
         @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
 
         /* ── Footer ── */
-        footer { background: #0d1117; color: #b0b0b0; padding: 3rem 2rem 1rem; }
-        .footer-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
-        .footer-section h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--text-light); margin-bottom: 1rem; }
-        .footer-logo img { height: 50px; margin-bottom: 1rem; }
-        .footer-section a { display: block; color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem; transition: color 0.3s; }
-        .footer-section a:hover { color: var(--coral); }
-        .footer-bottom { border-top: 1px solid #333; padding-top: 2rem; text-align: center; font-size: 0.9rem; }
-        .footer-social { display: flex; gap: 1rem; margin-top: 1rem; justify-content: center; }
-        .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #1a1a2e; border-radius: 50%; color: var(--text-light); transition: all 0.3s; }
+        footer { background: #0d1117; color: #b0b0b0; padding: 2.5rem 2rem 1rem; }
+        .footer-top { max-width: 1400px; margin: 0 auto 2rem; text-align: center; }
+        .footer-logo-img { height: 50px; margin-bottom: 0.75rem; }
+        .footer-tagline { font-size: 0.9rem; color: #999; max-width: 500px; margin: 0 auto 1rem; line-height: 1.5; }
+        .footer-social { display: flex; gap: 0.75rem; justify-content: center; }
+        .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #1a1a2e; border-radius: 50%; color: var(--text-light); transition: all 0.3s; font-size: 0.95rem; }
         .footer-social a:hover { background: var(--coral); color: var(--white); }
-        @media (max-width: 1024px) { .footer-container { grid-template-columns: repeat(3, 1fr); } }
+        .footer-links { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 2rem 0; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+        .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--text-light); margin-bottom: 0.75rem; }
+        .footer-col a, .footer-col p { display: block; color: #b0b0b0; font-size: 0.85rem; margin-bottom: 0.4rem; transition: color 0.3s; line-height: 1.4; }
+        .footer-col a:hover { color: var(--coral); }
+        .footer-bottom { max-width: 1400px; margin: 0 auto; padding-top: 1.25rem; text-align: center; font-size: 0.82rem; color: #666; }
         @media (max-width: 768px) {
-            .footer-container { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
-            footer { padding: 2rem 1.25rem 1rem; }
-            .footer-social { justify-content: center; }
-            .footer-section a { font-size: 0.88rem; }
+            footer { padding: 1.5rem 1.25rem 0.75rem; }
+            .footer-top { margin-bottom: 1.25rem; }
+            .footer-logo-img { height: 42px; margin-bottom: 0.5rem; }
+            .footer-tagline { font-size: 0.8rem; margin-bottom: 0.75rem; }
+            .footer-links { grid-template-columns: 1fr 1fr; gap: 1.25rem 1.5rem; padding: 1.25rem 0; }
+            .footer-col h4 { font-size: 0.9rem; margin-bottom: 0.5rem; }
+            .footer-col a, .footer-col p { font-size: 0.8rem; margin-bottom: 0.3rem; }
+            .footer-bottom { padding-top: 0.75rem; font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -672,47 +677,43 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine">
-                </div>
-                <p>The only publication mailed to every home in the Florida Keys. 26,000+ copies monthly with direct mail advertising, web design, SEO, and digital marketing services since 2012.</p>
+        <div class="footer-top">
+            <img src="https://keyslifemagazine.com/wp-content/uploads/2021/09/keys-life-magazine-logo-lg-1.png" alt="Keys Life Magazine" class="footer-logo-img">
+            <p class="footer-tagline">The only magazine mailed to every home in the Florida Keys. 26,000+ copies monthly since 2012.</p>
+            <div class="footer-social">
+                <a href="https://facebook.com/KeysLifeMagazine/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/keyslifemagazine/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/keyslifemagazine/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Navigate</h4>
                 <a href="#home">Home</a>
                 <a href="#stories">Stories</a>
                 <a href="services.html">Services</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div class="footer-section">
+            <div class="footer-col">
                 <h4>Content</h4>
-                <a href="articles.html#spotlight">All Spotlights</a>
-                <a href="articles.html#community">Community Stories</a>
-                <a href="articles.html#history">History Articles</a>
+                <a href="articles.html#spotlight">Spotlights</a>
+                <a href="articles.html#community">Community</a>
+                <a href="articles.html#history">History</a>
                 <a href="https://keyslifemagazine.com/archives-past-issues/">Past Issues</a>
             </div>
-            <div class="footer-section">
+            <div class="footer-col">
                 <h4>Services</h4>
-                <a href="services.html#magazine">Magazine Advertising</a>
-                <a href="services.html#web-design">Website Design</a>
-                <a href="services.html#seo">SEO Management</a>
+                <a href="services.html#magazine">Magazine Ads</a>
+                <a href="services.html#web-design">Web Design</a>
+                <a href="services.html#seo">SEO</a>
                 <a href="services.html#social">Social Media</a>
             </div>
-            <div class="footer-section">
+            <div class="footer-col">
                 <h4>Contact</h4>
-                <address>
-                    <p>90773 Old Highway, Unit #3<br>Tavernier, FL 33070</p>
-                    <p><a href="tel:305-453-6674">305-453-6674</a></p>
-                    <p><a href="mailto:sales@keyslifemagazine.com">sales@keyslifemagazine.com</a></p>
-                </address>
-                <div class="footer-social">
-                    <a href="https://facebook.com/KeysLifeMagazine/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/keyslifemagazine/" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/keyslifemagazine/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                <p>90773 Old Hwy, Unit #3<br>Tavernier, FL 33070</p>
+                <a href="tel:305-453-6674">305-453-6674</a>
+                <a href="mailto:sales@keyslifemagazine.com">sales@keyslife&shy;magazine.com</a>
             </div>
         </div>
         <div class="footer-bottom">
